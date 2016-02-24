@@ -1,15 +1,95 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *= require_tree .
+ *= require bootstrap
+ *= require font-awesome
+ *= require jquery.easy-pie-chart
+ *= require bootstrap-admin
  *= require_self
  */
+
+#div_color{
+  margin: 0 10px 0 0;
+  padding: 0;
+  border: solid 1px #ccc;
+  overflow-y: auto;
+  height: 383px;
+  width: 800px;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  background: #efefef;
+  line-height: 16px;
+  cursor: pointer;
+}
+
+#div_small{
+  margin: 0 10px 0 0;
+  padding: 0;
+  border: solid 1px #ccc;
+  height: 1000px;
+  width: 1000px;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  background: #efefef;
+  line-height: 16px;
+  cursor: pointer;
+}
+
+.post_purple{
+  background: transparent url(/images/post_purple.png) no-repeat;
+  width: 150px;
+  height: 180px;
+  padding: 30px 10px 0 17px;
+  color: #000;
+  margin: 0 5px 0 1px;
+  padding-bottom: 5px;
+  letter-spacing: .3mm;
+  margin-bottom: 5px;
+  color: #333;
+  font-size: 16px;
+  font-style: italic;
+  font-family: Arial;
+  float: left;
+}
+
+.post_yellow{
+  background: transparent url(/images/post_yellow.png) no-repeat;
+  width: 150px;
+  height: 180px;
+  padding: 30px 10px 0 17px;
+  color: #000;
+  margin: 0 5px 0 1px;
+  padding-bottom: 5px;
+  letter-spacing: .3mm;
+  margin-bottom: 5px;
+  color: #333;
+  font-size: 16px;
+  font-style: italic;
+  font-family: Arial;
+  float: left;
+}
+
+.post_green{
+  background: transparent url(/images/post_green.png) no-repeat;
+  width: 150px;
+  height: 180px;
+  padding: 30px 10px 0 17px;
+  color: #000;
+  margin: 0 5px 0 1px;
+  padding-bottom: 5px;
+  letter-spacing: .3mm;
+  margin-bottom: 5px;
+  color: #333;
+  font-size: 16px;
+  font-style: italic;
+  font-family: Arial;
+  float: left;
+}
+
+@media print
+{    
+    .no-print, .no-print *
+    {
+        display: none !important;
+    }
+}

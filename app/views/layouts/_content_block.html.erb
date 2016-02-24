@@ -1,0 +1,11 @@
+<div class="block row-fluid">
+  <div class="navbar navbar-inner block-header">
+    <div class="muted pull-left"><h2 class='text-info'><%= title %></h2></div>
+    <% if content_for?(:title_options) %>
+      <div class="pull-right"><%= yield(:title_options) %></div>
+    <% end %>
+  </div>
+  <div class="block-content collapse in">
+    <%= yield %>
+  </div>
+</div>

@@ -1,0 +1,218 @@
+/* Some overrides from default bootstrap styles */
+body {
+  padding-top: 40px;
+}
+
+body.login .block {
+  margin:0px;
+}
+
+.bs-docs-sidenav > li {
+  border-width: 1px 1px 0px 1px;
+  border-style: solid solid none solid;
+  border-color: #E5E5E5;
+}
+
+.bs-docs-sidenav > li:last-child {
+  border: 1px solid #E5E5E5;
+}
+
+.bs-docs-sidenav > li > a {
+  display: block;
+  width: 190px \9;
+  margin: 0 0 -1px;
+  padding: 8px 14px;
+  border: 0px none;
+}
+
+.bs-docs-sidenav > li:first-child,
+.bs-docs-sidenav > li:first-child > a {
+  -webkit-border-radius: 6px 6px 0 0;
+     -moz-border-radius: 6px 6px 0 0;
+          border-radius: 6px 6px 0 0;
+}
+
+.bs-docs-sidenav > li:last-child,
+.bs-docs-sidenav > li:last-child > a {
+  -webkit-border-radius: 0 0 6px 6px;
+     -moz-border-radius: 0 0 6px 6px;
+          border-radius: 0 0 6px 6px;
+}
+
+.bs-docs-sidenav > li:first-child:last-child,
+.bs-docs-sidenav > li:first-child:last-child > a {
+  -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+          border-radius: 6px;
+}
+.bs-docs-sidenav > .active > a {
+  position: relative;
+  z-index: 2;
+  padding: 9px 15px;
+  border: 0;
+  text-shadow: 0 1px 0 rgba(0,0,0,.15);
+  -webkit-box-shadow: inset 1px 0 0 rgba(0,0,0,.1), inset -1px 0 0 rgba(0,0,0,.1);
+     -moz-box-shadow: inset 1px 0 0 rgba(0,0,0,.1), inset -1px 0 0 rgba(0,0,0,.1);
+          box-shadow: inset 1px 0 0 rgba(0,0,0,.1), inset -1px 0 0 rgba(0,0,0,.1);
+}
+/* Chevrons */
+.bs-docs-sidenav .icon-chevron-right {
+  float: right;
+  margin-top: 2px;
+  margin-right: -6px;
+  opacity: .25;
+}
+.bs-docs-sidenav > li > a:hover {
+  background-color: #f5f5f5;
+}
+.bs-docs-sidenav a:hover .icon-chevron-right {
+  opacity: .5;
+}
+.bs-docs-sidenav .active .icon-chevron-right,
+.bs-docs-sidenav .active a:hover .icon-chevron-right {
+  opacity: 1;
+}
+
+/* sidebar */
+.bs-docs-sidenav {
+  max-width: initial;
+  margin: 0px 15px 0px 0px;
+  padding: 0px;
+}
+
+.bs-docs-sidenav li{
+  text-align: center;
+}
+
+.bs-docs-sidenav li i.icon,
+.bs-docs-sidenav li .sub-menu li i.icon {
+  width: 7%;
+}
+
+.bs-docs-sidenav li.open span > i.icon-chevron:before{
+  content: "\f077";
+}
+
+.bs-docs-sidenav li span > i.icon-chevron:before{
+  content: "\f078";
+}
+
+.bs-docs-sidenav li i.icon:before,
+.bs-docs-sidenav li .sub-menu li i.icon:before {
+  font-size: 20px;
+  display: inline-block;
+  text-align: center;
+}
+
+.span1 .bs-docs-sidenav li span.sidebar-text {
+  display: none;
+  visibility: hidden;
+}
+
+.bs-docs-sidenav li span.sidebar-text,
+.bs-docs-sidenav li .sub-menu li span.sidebar-text {
+  width: 85%;
+  display: inline-block;
+  text-align: left;
+}
+
+.bs-docs-sidenav li .sub-menu {
+  min-width: 100%;
+  max-width: 100%;
+  float: none;
+  margin: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border: 0px none;
+  position: initial;
+  background-color: #EEEEEE;
+}
+
+.bs-docs-sidenav li.open {
+  background-color: #EEEEEE;
+}
+
+.bs-docs-sidenav li.active {
+  background-color: #0088CC;
+}
+
+.bs-docs-sidenav li.active .sub-menu {
+  background-color: #0088CC;
+}
+
+.bs-docs-sidenav li .sub-menu li a {
+  text-align: center;
+  padding-left: 30px;
+  color: #005580;
+}
+
+.bs-docs-sidenav li.active .sub-menu li a,
+.bs-docs-sidenav li.open .sub-menu li a:hover,
+.bs-docs-sidenav li .sub-menu li.active a {
+  color: #FFFFFF;
+}
+
+.bs-docs-sidenav li.active .sub-menu li.active a ,
+.bs-docs-sidenav li.active .sub-menu li.active {
+  background-image: none;
+  background-color: rgb(60, 91, 121);
+}
+
+/* breadcrumb */
+.nav-toggle-sidebar {
+  margin-bottom: 0;
+  width: 55px;
+  float: left;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.toggle {
+  padding: 10px;
+  min-height: 0px;
+  color: #0088CC;
+}
+
+.toggle.left i.icon-chevron:before {
+  content: "\f053";
+}
+
+.toggle.right i.icon-chevron:before {
+  content: "\f054";
+}
+
+.nav-breadcrumb {
+  margin-bottom: 0px;
+  margin-left: 60px;
+}
+
+.breadcrumb > li.hidden {
+  display: none;
+  visibility: hidden;
+}
+
+/* alert */
+#messages-content {
+  margin: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.alert {
+  margin: 0px 0px 5px 0px;
+}
+
+.alert:last-child {
+  margin-bottom: 0px;
+}
+
+/* block-content */
+.block .block-content {
+  min-height: 20.25em;
+  margin-top: 15px;
+}
+
+/* navegation */
+.navbar .nav.pull-right {
+  float: right;
+  margin-right: 20px;
+}

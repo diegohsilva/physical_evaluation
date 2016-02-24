@@ -1,5 +1,12 @@
-<%= simple_form_for @exercise do |f| %>
-  <%= f.input :name, input_html: { maxlength: 50 } %><br><br>
-  <%= f.input :description, input_html: { maxlength: 50, rows:10, cols:50 }%><br>
-  <%= f.button :submit %>
+<%= simple_form_for(@exercise) do |f| %>
+	<div class="row-fluid">
+ 	 <div class="span9"><%= f.input :name, input_html: { class: 'span9' } %></div>
+	</div>
+  <div class="row-fluid">
+	 <div class="span10"><%= f.input :description,  input_html:{ rows:10, cols:50 , class:'span10'} %></div>
+  </div>
+  <div class="form-actions">
+    <%= f.button :submit, class: 'btn btn-success' %>
+    <%= link_to 'Voltar', exercises_path, class: 'btn' %>
+  </div>
 <% end %>
