@@ -1,0 +1,12 @@
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="container-fluid">
+        <%= link_to "Avaliação Física", root_path, :class => "brand" %>
+    </div>
+	</div>
+</div>
+<ul class="nav nav-pills">
+  <li role="presentation" class="<% if  params[:controller] == "dashboard"%>active<%end%>"><a href="<%= root_path %>"><i class="icon-home"></i> Home</a></li>
+  <li role="presentation" class="<% if  params[:controller] == "exercises"%>active<%end%>"><a href="<%= exercises_path%>">Exercícios</a></li>
+  <li role="presentation"  class="<% if  params[:controller] == "students"%>active<%end%>"><a href="#">Alunos</a></li>
+</ul>

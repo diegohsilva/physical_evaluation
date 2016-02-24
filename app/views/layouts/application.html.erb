@@ -1,12 +1,22 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>PhysicalEvaluation</title>	
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-<%= yield %>
-
-</body>
+  <head>
+ <%= stylesheet_link_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+		<%= render 'layouts/navegation_bar' %>
+		<div class="container-fluid">
+			<div class="span12" id="content">
+				<div class="block row-fluid">
+					<div class="block-content collapse in">
+						<%= yield %>
+					</div>
+				</div>	
+			</div>
+		</div>
+		<hr>
+  </body>
+<%= javascript_include_tag  "application" %>
 </html>
+
