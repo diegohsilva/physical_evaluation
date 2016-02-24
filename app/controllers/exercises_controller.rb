@@ -20,7 +20,7 @@ class ExercisesController < ApplicationController
 
     respond_to do |format|
       if @exercise.save
-        format.html { redirect_to @exercise, notice: 'Exercise was successfully created.' }
+        format.html { redirect_to exercises_path, notice: 'Exercise was successfully created.' }
         format.json { render :show, status: :created, location: @exercise }
       else
         format.html { render :new }
