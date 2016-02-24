@@ -1,0 +1,10 @@
+pt-BR:
+  flash:
+    actions:
+      create:
+        notice: '%{resource_name} criado com sucesso.'
+      update:
+        notice: '%{resource_name} alterado com sucesso.'
+      destroy:
+        notice: '%{resource_name} apagado com sucesso.'
+        alert: 'Não foi possível apagar o %{resource_name}.'
