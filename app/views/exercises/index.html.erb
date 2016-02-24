@@ -1,4 +1,4 @@
-<h3>Listagem de exercícios</h3>
+<table class="table"><td><h3>Listagem de exercícios</h3></td><td width='15%'><%= link_to 'Novo Exercicio', new_exercise_path, class: 'btn btn-success'%></td></table>
 
 <table class='table'>
   <thead>
@@ -23,7 +23,3 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'Novo Exercicio', new_exercise_path, class: :btn %>

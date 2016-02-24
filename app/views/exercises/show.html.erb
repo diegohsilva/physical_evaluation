@@ -1,14 +1,13 @@
-<p id="notice"><%= notice %></p>
-
 <p>
-  <strong>Name:</strong>
+  <strong>Nome:</strong>
   <%= @exercise.name %>
 </p>
 
 <p>
-  <strong>Description:</strong>
+  <strong>Descrição:</strong>
   <%= @exercise.description %>
 </p>
-
-<%= link_to 'Edit', edit_exercise_path(@exercise) %> |
-<%= link_to 'Back', exercises_path %>
+<div class="form-actions">
+<%= link_to 'Editar', edit_exercise_path(@exercise), class: 'btn btn-primary'  %> 
+<%= link_to 'Voltar', exercises_path, class: :btn %>
+</div>
