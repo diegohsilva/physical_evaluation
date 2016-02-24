@@ -1,0 +1,11 @@
+pt-BR:
+  title:
+  activerecord:
+    models:
+      exercise:
+        one: "Exercício"
+        many: "Exercícios"
+    attributes:
+      exercise:
+        name: "Nome"
+        description: 'Descrição'
