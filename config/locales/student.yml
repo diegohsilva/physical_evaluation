@@ -1,0 +1,20 @@
+pt-BR:
+  title:
+  activerecord:
+    models:
+      student:
+        one: "Aluno"
+        many: "Alunos"
+    attributes:
+      student:
+        name: "Nome"
+        email: 'Email'
+        birth_date: 'Data Nascimento'
+        street: 'Logradouro'
+        number_address: 'N°'
+        neighborhood: 'Bairro'
+        city: 'Cidade'
+        state: 'Estado'
+        phone: 'Telefone'
+        cell_phone: 'Celular'
+        zipcode: 'CEP'
