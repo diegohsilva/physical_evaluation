@@ -17,36 +17,18 @@ class ExercisesController < ApplicationController
 
   def create
     @exercise = Exercise.new(exercise_params)
-
-    respond_to do |format|
-      if @exercise.save
-        format.html { redirect_to exercises_path, notice: 'Exercise was successfully created.' }
-        format.json { render :show, status: :created, location: @exercise }
-      else
-        format.html { render :new }
-        format.json { render json: @exercise.errors, status: :unprocessable_entity }
-      end
-    end
+    @exercise.save
+    respond_with @exercise, :location => exercises_path
   end
 
   def update
-    respond_to do |format|
-      if @exercise.update(exercise_params)
-        format.html { redirect_to @exercise, notice: 'Exercise was successfully updated.' }
-        format.json { render :show, status: :ok, location: @exercise }
-      else
-        format.html { render :edit }
-        format.json { render json: @exercise.errors, status: :unprocessable_entity }
-      end
-    end
+    @exercise.update(exercise_params)
+    respond_with @exercise, :location => exercises_path
   end
 
   def destroy
     @exercise.destroy
-    respond_to do |format|
-      format.html { redirect_to exercises_url, notice: 'Exercise was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    respond_with @exercise, :location => exercises_path
   end
 
   private

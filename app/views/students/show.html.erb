@@ -1,0 +1,57 @@
+<p>
+  <strong>Name:</strong>
+  <%= @student.name %>
+</p>
+
+<p>
+  <strong>Street:</strong>
+  <%= @student.street %>
+</p>
+
+<p>
+  <strong>Number address:</strong>
+  <%= @student.number_address %>
+</p>
+
+<p>
+  <strong>Neighborhood:</strong>
+  <%= @student.neighborhood %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @student.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @student.state %>
+</p>
+
+<p>
+  <strong>Zipcode:</strong>
+  <%= @student.zipcode %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @student.email %>
+</p>
+
+<p>
+  <strong>Birth date:</strong>
+  <%= @student.birth_date %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @student.phone %>
+</p>
+
+<p>
+  <strong>Cell phone:</strong>
+  <%= @student.cell_phone %>
+</p>
+
+<%= link_to 'Edit', edit_student_path(@student) %> |
+<%= link_to 'Back', students_path %>

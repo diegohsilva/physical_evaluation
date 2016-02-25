@@ -1,0 +1,21 @@
+<%= simple_form_for(@student) do |f| %>
+  <div class="tabbable">
+    <ul class="nav nav-tabs">
+      <li class="active"> <%= link_to "Geral", "#main", :"data-toggle" => :tab %></li>
+      <li> <%= link_to "Endereço", "#address", :"data-toggle" => :tab %></li>
+    </ul>
+  </div>
+  <div class="tab-content">
+    <div class="tab-pane fade active in" id="main">
+      <%= render "main", :f => f %>
+    </div>
+    <div class="tab-pane" id="address">
+      <%= render "address", :f => f %>
+    </div>
+  </div>
+  <div class="form-actions">
+    <%= f.button :submit, :class => "btn btn-success" %>
+    <%= link_to 'Voltar', students_path, :class => "btn"  %>
+  </div>
+
+<% end %>
