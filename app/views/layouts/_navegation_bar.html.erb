@@ -1,12 +1,18 @@
 <div class="navbar">
   <div class="navbar-inner">
     <div class="container-fluid">
-        <%= link_to "Avaliação Física", root_path, :class => "brand" %>
+      <%= image_tag '/images/logo.png', :width =>30, :class  => 'brand'%>    
+         <% if user_signed_in? %>
+     		   <div class="nav-collapse collapse">
+     		   	<ul class="nav pull-right">
+              <li>
+	              <%= link_to destroy_user_session_path, :data => { :confirm => 'Deseja realmenta fazer logoff' }, :method => :delete, :tabindex => "-1" do %>
+	               <h4 title="Logoff"> <i class="icon-off"></i></h4>
+	              <% end %>
+              </li>
+	            </ul>
+     		   </div>
+     		 <%end%>
     </div>
 	</div>
 </div>
-<ul class="nav nav-pills">
-  <li role="presentation" class="<% if  params[:controller] == "dashboard"%>active<%end%>"><a href="<%= root_path %>"><h4 title="Home"><i class="icon-home"></i></h4></a></li>
-  <li role="presentation" class="<% if  params[:controller] == "exercises"%>active<%end%>"><a href="<%= exercises_path%>"><h4 title="Exercícios"><i class="icon-list"></i></h4></a></li>
-  <li role="presentation"  class="<% if  params[:controller] == "students"%>active<%end%>"><a href="<%= students_path%>"><h4 title="Alunos"><i class="icon-user"></i></h4></a></li>
-</ul>

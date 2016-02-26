@@ -1,0 +1,5 @@
+<ul class="nav nav-pills">
+  <li role="presentation" class="<% if  params[:controller] == "dashboard"%>active<%end%>"><a href="<%= root_path %>"><h4 title="Home"><i class="icon-home"></i></h4></a></li>
+  <li role="presentation" class="<% if  params[:controller] == "exercises"%>active<%end%>"><a href="<%= exercises_path%>"><h4 title="Exercícios"><i class="icon-list"></i></h4></a></li>
+  <li role="presentation"  class="<% if  params[:controller] == "students"%>active<%end%>"><a href="<%= students_path%>"><h4 title="Alunos"><i class="icon-user"></i></h4></a></li>
+</ul>

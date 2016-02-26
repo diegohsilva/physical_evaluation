@@ -1,0 +1,24 @@
+<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => 'form-vertical' }) do |f| %>
+  <table width='100%'>
+    <tr>
+      <td align='center'>
+        <%= image_tag  "/images/logo.png", :width => 100, class: " img-circle" %>
+       </td>
+    </tr>
+    <tr>
+      <td align='center'>
+        <%= f.input :email, :autofocus => true %>
+      </td>
+    </tr>
+    <tr>
+      <td align='center'>
+        <%= f.input :password %>
+      </td>
+    </tr>
+    <tr>
+      <td align='center'>
+        <%= f.button :submit, "Entrar", :class => 'btn  btn-primary' %>
+      </td>
+    </tr>
+  <table>
+<% end %>
