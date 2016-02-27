@@ -1,0 +1,13 @@
+pt-BR:
+  title:
+  activerecord:
+    models:
+      evaluator:
+        one: "Avaliador"
+        many: "Avaliadores"
+    attributes:
+      evaluator:
+        name: "Nome"
+        email: 'Email'
+        phone: 'Telefone'
+        cpf: 'CPF'

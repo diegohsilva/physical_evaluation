@@ -11,10 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160226194520) do
+ActiveRecord::Schema.define(version: 20160227045351) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "evaluators", force: :cascade do |t|
+    t.string   "name",       limit: 60
+    t.string   "email",      limit: 60
+    t.string   "cpf"
+    t.string   "phone"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+  end
 
   create_table "exercises", force: :cascade do |t|
     t.string   "name",        limit: 60
@@ -53,10 +62,12 @@ ActiveRecord::Schema.define(version: 20160226194520) do
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.integer  "student_id"
+    t.integer  "evaluator_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "users", "evaluators", name: "users_evaluator_id_fk"
   add_foreign_key "users", "students", name: "users_student_id_fk"
 end
