@@ -8,7 +8,7 @@ class AddFieldsAnamneseToEvaluations < ActiveRecord::Migration
   	add_column :evaluations, :Amn_PerdaPeso,         :boolean
   	add_column :evaluations, :Amn_praticaAtividade,  :boolean
   	add_column :evaluations, :Amn_Atividade,         :string, limit: 30
-  	add_column :evaluations, :Amn_Frequencia,        :boolean
+  	add_column :evaluations, :Amn_Frequencia,        :integer
   	add_column :evaluations, :Amn_DorDorsal,         :boolean
   	add_column :evaluations, :Amn_DorLombar,         :boolean
   	add_column :evaluations, :Amn_DorCervical,       :boolean

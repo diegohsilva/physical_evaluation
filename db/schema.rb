@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 20160301143059) do
     t.boolean  "Amn_PerdaPeso"
     t.boolean  "Amn_praticaAtividade"
     t.string   "Amn_Atividade",          limit: 30
-    t.boolean  "Amn_Frequencia"
+    t.integer  "Amn_Frequencia"
     t.boolean  "Amn_DorDorsal"
     t.boolean  "Amn_DorLombar"
     t.boolean  "Amn_DorCervical"
