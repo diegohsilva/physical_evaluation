@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160301123925) do
+ActiveRecord::Schema.define(version: 20160301143059) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,8 +21,35 @@ ActiveRecord::Schema.define(version: 20160301123925) do
     t.integer  "evaluator_id"
     t.date     "evaluation_date"
     t.date     "end_date"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
+    t.boolean  "Amn_AumentoMassa"
+    t.boolean  "Amn_MelhoraAerobico"
+    t.boolean  "Amn_Saude"
+    t.boolean  "Amn_Fortalecimento"
+    t.boolean  "Amn_Condicionamento"
+    t.boolean  "Amn_PerdaPeso"
+    t.boolean  "Amn_praticaAtividade"
+    t.string   "Amn_Atividade",          limit: 30
+    t.boolean  "Amn_Frequencia"
+    t.boolean  "Amn_DorDorsal"
+    t.boolean  "Amn_DorLombar"
+    t.boolean  "Amn_DorCervical"
+    t.boolean  "Amn_Limitacao"
+    t.string   "Amn_Dor",                limit: 40
+    t.string   "Amn_Cirurgia",           limit: 50
+    t.string   "Amn_Medicamento",        limit: 50
+    t.string   "Amn_problemaSaude",      limit: 30
+    t.string   "Amn_FrequenciaRepouso"
+    t.string   "Amn_PressaoRepouso",     limit: 10
+    t.boolean  "Amn_ProblemaCardiado"
+    t.boolean  "Amn_DorPeito"
+    t.boolean  "Amn_DorPeitoUltimoMes"
+    t.boolean  "Amn_Desmaio"
+    t.boolean  "Amn_ProblemaOsseo"
+    t.boolean  "Amn_MedicamentoPressao"
+    t.boolean  "Amn_impedimento"
+    t.string   "Amn_Observacoes",        limit: 300
   end
 
   add_index "evaluations", ["evaluator_id"], name: "index_evaluations_on_evaluator_id", using: :btree
