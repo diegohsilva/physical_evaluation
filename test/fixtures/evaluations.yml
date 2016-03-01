@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  student_id: 
+  evaluator_id: 
+  evaluation_date: 2016-03-01
+  end_date: 2016-03-01
+
+two:
+  student_id: 
+  evaluator_id: 
+  evaluation_date: 2016-03-01
+  end_date: 2016-03-01

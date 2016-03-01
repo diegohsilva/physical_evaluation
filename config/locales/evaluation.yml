@@ -1,0 +1,13 @@
+pt-BR:
+  title:
+  activerecord:
+    models:
+      evaluation:
+        one: "Avaliação"
+        many: "Avaliações"
+    attributes:
+      evaluation:
+        student_id: "Aluno"
+        evaluator_id: 'Avaliador'
+        evaluation_date: 'Data da Avaliação'
+        end_date: 'Vencimento'

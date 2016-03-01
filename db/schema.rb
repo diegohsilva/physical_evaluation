@@ -11,10 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160227045351) do
+ActiveRecord::Schema.define(version: 20160301123925) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "evaluations", force: :cascade do |t|
+    t.integer  "student_id"
+    t.integer  "evaluator_id"
+    t.date     "evaluation_date"
+    t.date     "end_date"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "evaluations", ["evaluator_id"], name: "index_evaluations_on_evaluator_id", using: :btree
+  add_index "evaluations", ["student_id"], name: "index_evaluations_on_student_id", using: :btree
 
   create_table "evaluators", force: :cascade do |t|
     t.string   "name",       limit: 60
@@ -68,6 +80,8 @@ ActiveRecord::Schema.define(version: 20160227045351) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "evaluations", "evaluators"
+  add_foreign_key "evaluations", "students"
   add_foreign_key "users", "evaluators", name: "users_evaluator_id_fk"
   add_foreign_key "users", "students", name: "users_student_id_fk"
 end

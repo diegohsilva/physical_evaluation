@@ -1,0 +1,26 @@
+<%= simple_form_for(@evaluation) do |f| %>
+<div class="row-fluid"> 
+   <div class="span6"> 
+      <%= f.input :student_id, collection: Student.all.map{|cd|[cd.name, cd.id]}, input_html: { class: 'span10' } %>
+   </div>
+</div>   
+<div class="row-fluid"> 
+   <div class="span6"> 
+      <%= f.input :evaluator_id, collection: Evaluator.all.map{|cd|[cd.name, cd.id]}, input_html: { class: 'span10' } %>
+   </div>
+</div>
+<div class="row-fluid">    
+   <div class="span4"> 
+      <%= f.input :evaluation_date, input_html: { class: 'span4' } %>
+   </div>
+</div>
+<div class="row-fluid">   
+   <div class="span4"> 
+      <%= f.input :end_date, input_html: { class: 'span4' } %>
+   </div>
+</div>   
+  <div class="form-actions">
+    <%= f.button :submit, :class => "btn btn-success" %>
+    <%= link_to 'Voltar', evaluations_path, :class => "btn"  %>
+  </div>  
+<% end %>

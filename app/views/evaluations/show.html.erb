@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Aluno:</strong>
+  <%= @evaluation.student %>
+</p>
+
+<p>
+  <strong>Avaliador:</strong>
+  <%= @evaluation.evaluator %>
+</p>
+
+<p>
+  <strong>Data:</strong>
+  <%= l @evaluation.evaluation_date %>
+</p>
+
+<p>
+  <strong>Data de Vencimento:</strong>
+  <%= l @evaluation.end_date %>
+</p>
+<p class="form-actions" >
+   <%= link_to 'Editar', edit_evaluation_path(@evaluation), class: "btn btn-primary"  %> 
+   <%= link_to 'Voltar', evaluations_path, class: "btn"  %>
+</p>
