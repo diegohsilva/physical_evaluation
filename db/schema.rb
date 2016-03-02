@@ -11,7 +11,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160301032100) do
 ActiveRecord::Schema.define(version: 20160301143059) do
 
   # These are extensions that must be enabled in order to support this database
@@ -120,9 +119,9 @@ ActiveRecord::Schema.define(version: 20160301143059) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
-  add_foreign_key "trainings", "students"
   add_foreign_key "evaluations", "evaluators"
   add_foreign_key "evaluations", "students"
+  add_foreign_key "trainings", "students"
   add_foreign_key "users", "evaluators", name: "users_evaluator_id_fk"
   add_foreign_key "users", "students", name: "users_student_id_fk"
 end

@@ -20,11 +20,11 @@ pt-BR:
         Amn_praticaAtividade: 'Pratica atividade física regularmente? '
         Amn_Atividade: 'Qual?'
         Amn_Frequencia: 'Frequencia Semanal'       
-        Amn_DorDorsal:         
-        Amn_DorLombar:         
-        Amn_DorCervical:       
-        Amn_Limitacao:         
-        Amn_Dor:               
+        Amn_DorDorsal: 'Dorsal'
+        Amn_DorLombar: 'Lombar'
+        Amn_DorCervical: 'Cervical'  
+        Amn_Limitacao: 'Apresenta limitações ou dor articular? Qual?'
+        Amn_Dor: 
         Amn_Cirurgia:          
         Amn_Medicamento:       
         Amn_problemaSaude:     
