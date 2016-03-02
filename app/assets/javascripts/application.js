@@ -10,7 +10,7 @@
 //= require bootstrap
 //= require theme
 //= requere bootstrap-admin
-
+//= require cocoon
 
 $(function(){
     $(".input-search").keyup(function(){

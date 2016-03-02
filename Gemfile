@@ -23,3 +23,4 @@ gem 'enumerate_it'
 gem 'devise'
 gem 'immigrant'
 gem 'has_scope'
+gem "cocoon"

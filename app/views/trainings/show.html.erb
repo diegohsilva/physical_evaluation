@@ -1,29 +1,27 @@
-<p id="notice"><%= notice %></p>
-
 <p>
-  <strong>Student:</strong>
+  <strong>Aluno:</strong>
   <%= @training.student %>
 </p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Nome do Treino:</strong>
   <%= @training.name %>
 </p>
 
 <p>
-  <strong>Date start:</strong>
-  <%= @training.date_start %>
+  <strong>Período de validace:</strong>
+  <%= l @training.date_start %> à   <%= l @training.date_end %>
 </p>
-
 <p>
-  <strong>Date end:</strong>
-  <%= @training.date_end %>
-</p>
-
-<p>
-  <strong>Description:</strong>
+  <strong>Descrição:</strong>
   <%= @training.description %>
 </p>
+<fieldset>
+  <legend>Exercícios</legend>
+    <% @training.exercise_trainings.each do |t| %>
+      <%= t %><hr>
+    <% end %>
+</fieldset>
 
 <%= link_to 'Edit', edit_training_path(@training) %> |
 <%= link_to 'Back', trainings_path %>
