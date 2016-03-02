@@ -1,0 +1,9 @@
+<div id="exercise_trainings">
+  <%= f.simple_fields_for :exercise_trainings do |exercise_training| %>
+    <%= render "exercise_training_fields", :f => exercise_training %>
+  <% end %>
+</div>
+<div>
+  <%= link_to_add_association 'Adicionar exercício', f, :exercise_trainings, :class => "btn btn-default" %>
+</div>
+<br>

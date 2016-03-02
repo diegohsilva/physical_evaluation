@@ -1,0 +1,6 @@
+<div class="nested-fields">
+	<div class="row-fluid">
+		<div class="span7"><%= f.input :exercise_id, collection: Exercise.all,  label: 'Exercicio', input_html: {class: 'span12'} %></div>	
+		<div class="span3"><br><br><%= link_to_remove_association "", f, :class => "icon-trash" %></div>
+	</div>
+</div>

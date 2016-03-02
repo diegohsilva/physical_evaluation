@@ -12,6 +12,7 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 20160301143059) do
+ActiveRecord::Schema.define(version: 20160302131255) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,6 +65,16 @@ ActiveRecord::Schema.define(version: 20160301143059) do
     t.datetime "updated_at",            null: false
   end
 
+  create_table "exercise_trainings", force: :cascade do |t|
+    t.integer  "exercise_id"
+    t.integer  "training_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "exercise_trainings", ["exercise_id"], name: "index_exercise_trainings_on_exercise_id", using: :btree
+  add_index "exercise_trainings", ["training_id"], name: "index_exercise_trainings_on_training_id", using: :btree
+
   create_table "exercises", force: :cascade do |t|
     t.string   "name",        limit: 60
     t.text     "description"
@@ -86,6 +97,16 @@ ActiveRecord::Schema.define(version: 20160301143059) do
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
   end
+
+  create_table "tasks", force: :cascade do |t|
+    t.string   "description"
+    t.boolean  "done"
+    t.integer  "training_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "tasks", ["training_id"], name: "index_tasks_on_training_id", using: :btree
 
   create_table "trainings", force: :cascade do |t|
     t.integer  "student_id"
@@ -121,6 +142,9 @@ ActiveRecord::Schema.define(version: 20160301143059) do
 
   add_foreign_key "evaluations", "evaluators"
   add_foreign_key "evaluations", "students"
+  add_foreign_key "exercise_trainings", "exercises"
+  add_foreign_key "exercise_trainings", "trainings"
+  add_foreign_key "tasks", "trainings"
   add_foreign_key "trainings", "students"
   add_foreign_key "users", "evaluators", name: "users_evaluator_id_fk"
   add_foreign_key "users", "students", name: "users_student_id_fk"
