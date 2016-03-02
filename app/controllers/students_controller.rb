@@ -1,6 +1,12 @@
 class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :edit, :update, :destroy]
-  
+
+  autocomplete :student, :name, :display_value => :name, :extra_data => [:phone, :birth_date, :email] do |items|
+    respond_to do |format|
+     format.json { render :json => @items }
+    end
+  end
+
   def index
     @students = Student.all
     respond_with(@students)

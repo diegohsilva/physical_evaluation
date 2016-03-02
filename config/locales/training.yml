@@ -12,3 +12,4 @@ pt-BR:
         student_id: 'Aluno'
         date_start: 'Data Início'
         date_end: 'Data Fim'
+        student_name: 'Aluno'

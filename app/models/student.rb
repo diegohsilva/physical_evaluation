@@ -7,6 +7,9 @@ class Student < ActiveRecord::Base
 
 	after_save :create_user
 
+#	 scope :name, lambda { |id| where("name = ?", name) }
+
+
 	def to_s
 		name
 	end
