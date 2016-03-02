@@ -1,0 +1,40 @@
+pt-BR:
+  title:
+  activerecord:
+    models:
+      evaluation:
+        one: "Avaliação"
+        many: "Avaliações"
+    attributes:
+      evaluation:
+        student_id: "Aluno"
+        evaluator_id: 'Avaliador'
+        evaluation_date: 'Data da Avaliação'
+        end_date: 'Vencimento'
+        Amn_AumentoMassa: 'Aumento da Massa Muscular'
+        Amn_MelhoraAerobico: 'Melhora da Capacidade Aeróbica' 
+        Amn_Saude: 'Saúde / Qualidade de Vida'
+        Amn_Fortalecimento: 'Fortalecimento Muscular'
+        Amn_Condicionamento: 'Condicionamento Físico Geral'
+        Amn_PerdaPeso: 'Perda de Peso'
+        Amn_praticaAtividade: 'Pratica atividade física regularmente? '
+        Amn_Atividade: 'Qual?'
+        Amn_Frequencia: 'Frequencia Semanal'       
+        Amn_DorDorsal:         
+        Amn_DorLombar:         
+        Amn_DorCervical:       
+        Amn_Limitacao:         
+        Amn_Dor:               
+        Amn_Cirurgia:          
+        Amn_Medicamento:       
+        Amn_problemaSaude:     
+        Amn_FrequenciaRepouso: 
+        Amn_PressaoRepouso:    
+        Amn_ProblemaCardiado:  
+        Amn_DorPeito:          
+        Amn_DorPeitoUltimoMes: 
+        Amn_Desmaio:           
+        Amn_ProblemaOsseo:     
+        Amn_MedicamentoPressao:
+        Amn_impedimento:       
+        Amn_Observacoes:  
