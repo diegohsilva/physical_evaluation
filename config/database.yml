@@ -4,4 +4,4 @@ development:
   database: physical_evaluation
   pool: 5
   username: postgres
-  password: 120188
+  password: diegoh6

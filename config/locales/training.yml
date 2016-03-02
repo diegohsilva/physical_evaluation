@@ -1,0 +1,14 @@
+pt-BR:
+  title:
+  activerecord:
+    models:
+      training:
+        one: "Treino"
+        many: "Treinos"
+    attributes:
+     training:
+        name: "Descrição"
+        description: 'Observação'
+        student_id: 'Aluno'
+        date_start: 'Data Início'
+        date_end: 'Data Fim'

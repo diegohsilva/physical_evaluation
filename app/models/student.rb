@@ -1,4 +1,5 @@
 class Student < ActiveRecord::Base
+	has_many :trainings
 	has_one :user
 	validates :name, presence: true
 	validates :email, presence: true
