@@ -3,6 +3,10 @@
     <ul class="nav nav-tabs">
       <li class="active"> <%= link_to "Geral", "#general", :"data-toggle" => :tab %></li>
       <li> <%= link_to "Anamanese", "#anamnese", :"data-toggle" => :tab %></li>
+      <li> <%= link_to "Composição Corporal", "#compCorp", :"data-toggle" => :tab %></li>
+      <li> <%= link_to "Perímetros", "#perimetros", :"data-toggle" => :tab %></li>
+      <li> <%= link_to "Fotos", "#fotos", :"data-toggle" => :tab %></li>
+      <li> <%= link_to "Avaliação Postural", "#avPostural", :"data-toggle" => :tab %></li>
     </ul>
   </div>
   <div class="tab-content">
@@ -12,6 +16,18 @@
     <div class="tab-pane" id="anamnese">
       <%= render "anamnese", :f => f %>
     </div>
+    <div class="tab-pane" id="compCorp">
+      <%= render "compCorp", :f => f %>
+    </div>
+    <div class="tab-pane" id="perimetros">
+      <%= render "perimetro", :f => f %>
+    </div>    
+        <div class="tab-pane" id="perimetros">
+      <%= render "fotos", :f => f %>
+    </div>    
+        <div class="tab-pane" id="perimetros">
+      <%= render "avPostural", :f => f %>
+    </div>    
   </div>
   <div class="form-actions">
     <%= f.button :submit, :class => "btn btn-success" %>
