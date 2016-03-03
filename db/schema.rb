@@ -11,8 +11,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160301143059) do
-ActiveRecord::Schema.define(version: 20160302131255) do
 ActiveRecord::Schema.define(version: 20160302124024) do
 
   # These are extensions that must be enabled in order to support this database
