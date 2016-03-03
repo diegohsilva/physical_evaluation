@@ -11,6 +11,9 @@
 //= require theme
 //= requere bootstrap-admin
 //= require cocoon
+//= require jquery-ui
+//= require autocomplete-rails
+//= require jquery-ui/autocomplete
 
 $(function(){
     $(".input-search").keyup(function(){

@@ -14,6 +14,7 @@ class TrainingsController < ApplicationController
 
   def new
     @training = Training.new
+    @training.student = Student.new
     respond_with(@training)
   end
 

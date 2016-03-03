@@ -4,6 +4,7 @@
  *= require jquery.easy-pie-chart
  *= require bootstrap-admin
  *= require_self
+ *= require autocomplete
  */
 
 #div_color{
