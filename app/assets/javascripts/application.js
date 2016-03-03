@@ -14,7 +14,9 @@
 //= require jquery-ui
 //= require autocomplete-rails
 //= require jquery-ui/autocomplete
-
+//= require bootstrap-datepicker
+//= require bootstrap-datepicker.min
+//= require bootstrap-datepicker.pt-BR.min
 $(function(){
     $(".input-search").keyup(function(){
         //pega o css da tabela
@@ -101,6 +103,8 @@ var maskSetup = function (html) {
     html.find('input.date').inputmask("99/99/9999");
     html.find('input.phone').inputmask("(99)9999-9999");
     html.find('input.zipcode').inputmask("99.999-999");
+    html.find('input.cel_phone').inputmask("(99)9 9999-9999");
+ 
     html.find('input.average').inputmask("99.99");
 
     html.find('input.time').inputmask("99:99");

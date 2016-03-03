@@ -5,6 +5,7 @@
  *= require bootstrap-admin
  *= require_self
  *= require autocomplete
+ *= require bootstrap-datepicker3
  */
 
 #div_color{

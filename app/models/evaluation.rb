@@ -6,6 +6,8 @@ class Evaluation < ActiveRecord::Base
 
   delegate :name, to: :student, prefix:  true 
   delegate :name, to: :evaluator, prefix: true
+	
+	scope :by_expired, lambda { |date| where("evaluations.end_date = ?", date) }
 
   def to_s
     name			

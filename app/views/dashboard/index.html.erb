@@ -1,19 +1,21 @@
-﻿<div class="container-fluid" id="messages-content">
-	<div class="row-fluid">
-		<div class="alert alert-info">
-			<i class="icon-info"></i>
-			<table class="table">
-				<tr>
-					<td>
-						<strong>Há 1 aluno com avaliação vencidade.</strong>
-					</td>
-					<td width="1%">
-						<%= link_to students_path, role: 'button' do %>
-							<i class="icon-eye-open"></i>
-						<% end %>
-					</td>
-				</tr>
-			</table>
+﻿<% if  @evaluations.any? %>
+	<div class="container-fluid" id="messages-content">
+		<div class="row-fluid">
+			<div class="alert alert-info">
+				<i class="icon-info"></i>
+				<table class="table">
+					<tr>
+						<td>
+							<strong>Há <%= @evaluations.count%> avaliação(ões) vencendo hoje.</strong>
+						</td>
+						<td width="1%">
+							<%= link_to students_path, role: 'button' do %>
+								<i class="icon-eye-open"></i>
+							<% end %>
+						</td>
+					</tr>
+				</table>
+			</div>
 		</div>
 	</div>
-</div>
+<% end %>

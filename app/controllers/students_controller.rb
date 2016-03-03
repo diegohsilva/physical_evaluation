@@ -22,6 +22,7 @@ class StudentsController < ApplicationController
   end
 
   def edit
+    @student.birth_date = @student.birth_date.strftime("%d/%m/%Y")  unless @student.birth_date.nil?
   end
 
   def create

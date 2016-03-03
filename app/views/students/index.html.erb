@@ -23,25 +23,25 @@
   </thead>
 
   <tbody>
-    <% @students.each do |student| %>
+    <% @students.sorted.each do |student| %>
       <tr>
         <td><%= student %></td>
-        <td></td>
+        <td><%= student.age_string%></td>
         <td><%= student.address %></td>
         <td><%= student.phones%></td>
         <td>
           <%= link_to edit_student_path(student), role: 'button' do %>
-            <h3 title="Editar"><i class="icon-pencil"></i></h3>
+            <h5 title="Editar"><i class="icon-pencil"></i></h5>
           <% end %>
         </td>
         <td>
           <%= link_to student, method: :delete, data:{confirm: 'Confirma exclusão ?'}, role: 'button' do %>
-            <h3 title="Apagar"><i class="icon-trash"></i></h3>
+            <h5 title="Apagar"><i class="icon-trash"></i></h5>
           <% end %>              
         </td>
         <td>
           <%= link_to student, role: 'button' do %>
-            <h3 title="Informações"><i class="icon-info"></i></h3>
+            <h5 title="Informações"><i class="icon-info"></i></h5>
           <% end %>
         </td>
       </tr>
