@@ -15,10 +15,14 @@ class TrainingsController < ApplicationController
   def new
     @training = Training.new
     @training.student = Student.new
+    @training.date_start = Date.current.strftime("%d/%m/%Y")
+    @training.date_end = Date.current.strftime("%d/%m/%Y")
     respond_with(@training)
   end
 
   def edit
+    @training.date_start = @training.date_start.strftime("%d/%m/%Y")
+    @training.date_end = @training.date_end.strftime("%d/%m/%Y")
   end
 
   def create
