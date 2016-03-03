@@ -14,6 +14,8 @@ class EvaluationsController < ApplicationController
 
   def new
     @evaluation = Evaluation.new
+    @evaluation.student = Student.new
+    @evaluation.evaluator = Evaluator.new
     respond_with(@evaluation)
   end
 

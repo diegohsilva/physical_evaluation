@@ -7,8 +7,8 @@ pt-BR:
         many: "Avaliações"
     attributes:
       evaluation:
-        student_id: "Aluno"
-        evaluator_id: 'Avaliador'
+        student_name: "Aluno"
+        evaluator_name: 'Avaliador'
         evaluation_date: 'Data da Avaliação'
         end_date: 'Vencimento'
         Amn_AumentoMassa: 'Aumento da Massa Muscular'

@@ -1,6 +1,12 @@
 class EvaluatorsController < ApplicationController
   before_action :set_evaluator, only: [:show, :edit, :update, :destroy]
 
+  autocomplete :evaluator, :name, :display_value => :name, :extra_data => [:email] do |items|
+    respond_to do |format|
+    format.json { render :json => @items }
+    end
+  end
+  
   respond_to :html
 
   def index
