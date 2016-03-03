@@ -9,9 +9,11 @@
   </td>
 </table>
 
+<%= label_tag 'txtBusca', 'Pesquisar' %>
+<%= text_field_tag 'txtBusca', '', :class => 'span11 input-search', :id => 'txtBusca',:placeholder => "Buscar nesta lista", :alt =>"list_students" %>
 
 
-<table class="table">
+<table class="table list_students">
   <thead>
     <tr>
       <th>Nome</th>
