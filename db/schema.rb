@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160302124024) do
+ActiveRecord::Schema.define(version: 20160303190539) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,20 @@ ActiveRecord::Schema.define(version: 20160302124024) do
     t.boolean  "Amn_MedicamentoPressao"
     t.boolean  "Amn_impedimento"
     t.string   "Amn_Observacoes",        limit: 300
+    t.boolean  "Ccorp_Jackson7"
+    t.boolean  "Ccorp_Jackson3"
+    t.boolean  "Ccorp_bioimpedancia"
+    t.float    "Ccorp_peso"
+    t.float    "Ccorp_altura"
+    t.float    "Ccorp_gordura"
+    t.float    "Ccorp_subescapular"
+    t.float    "Ccorp_tricipital"
+    t.float    "Ccorp_coxa"
+    t.float    "Ccorp_peitoral"
+    t.float    "Ccorp_supraIliaca"
+    t.float    "Ccorp_AxilarMedia"
+    t.boolean  "Ccorp_guedes"
+    t.float    "Ccorp_abdominal"
   end
 
   add_index "evaluations", ["evaluator_id"], name: "index_evaluations_on_evaluator_id", using: :btree
