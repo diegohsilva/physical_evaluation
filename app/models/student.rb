@@ -5,6 +5,8 @@ class Student < ActiveRecord::Base
 
 	validates :name, presence: true
 	validates :email, presence: true
+	validates_date :birth_date, :before => :today
+
 
 	has_enumeration_for :state, with: State
 
