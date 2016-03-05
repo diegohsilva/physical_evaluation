@@ -6,12 +6,14 @@ class Evaluation < ActiveRecord::Base
   belongs_to :evaluator
 
   validates :student_id, :evaluator_id, presence: true
-  validates :student_name, presence: true  
+  validates :student_name, :evaluator_name, presence: true  
+  validates_date :end_date, after: :evaluation_date, :after_message => "Data de vencimento não pode ser menor que data da avaliação"
+
 
 	scope :by_expired, lambda { |date| where("evaluations.end_date = ?", date) }
 
   def to_s
     name			
   end
-  
+
 end
