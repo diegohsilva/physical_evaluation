@@ -26,3 +26,7 @@ gem "cocoon"
 gem 'jquery-ui-rails'
 gem 'rails4-autocomplete'
 gem 'bootstrap-datepicker-rails'
+gem "paperclip"
+gem 'validates_timeliness'
+
+#gem "rmagick"
