@@ -5,7 +5,6 @@ class CreateEvaluations < ActiveRecord::Migration
       t.references :evaluator, index: true, foreign_key: true
       t.date :evaluation_date
       t.date :end_date
-
       t.timestamps null: false
     end
   end

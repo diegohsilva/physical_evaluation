@@ -16,8 +16,8 @@ class EvaluationsController < ApplicationController
     @evaluation = Evaluation.new
     @evaluation.student = Student.new
     @evaluation.evaluator = Evaluator.new
-    @evaluation.evaluation_date = Date.current.strftime("%d/%m/%Y")
-    @evatuation.end_date = Date.current.strftime("%d/%m/%Y")
+    #@evaluation.evaluation_date = Date.current.strftime("%d/%m/%Y")
+    #@evatuation.end_date = Date.current.strftime("%d/%m/%Y")
 
     respond_with(@evaluation)
   end
