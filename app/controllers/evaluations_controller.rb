@@ -23,8 +23,6 @@ class EvaluationsController < ApplicationController
   end
 
   def edit
-    @evaluation.evaluation_date = @evaluation.evaluation_date.strftime("%d/%m/%Y")
-    @evaluation.end_date = @evaluation.end_date.strftime("%d/%m/%Y")
   end
 
   def create
@@ -49,6 +47,6 @@ class EvaluationsController < ApplicationController
     end
 
     def evaluation_params
-      params.require(:evaluation).permit(:student_id, :evaluator_id, :evaluation_date, :end_date)
+      params.require(:evaluation).permit(:student_id, :evaluator_id, :evaluation_date, :end_date, :student_name, :evaluator_name)
     end
 end

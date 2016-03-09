@@ -1,9 +1,11 @@
 class Training < ActiveRecord::Base
+  attr_accessor :student_name
+
   belongs_to :student
   has_many :exercise_trainings
 
-  delegate :name, to: :student, prefix: true  
-  
+  validates :student_name, presence: true
+
   accepts_nested_attributes_for :exercise_trainings, reject_if: :all_blank, allow_destroy: true
 
   validates :name, presence: true

@@ -48,6 +48,6 @@ class EvaluatorsController < ApplicationController
     end
 
     def evaluator_params
-      params.require(:evaluator).permit(:name, :email, :cpf, :phone)
+      params.require(:evaluator).permit(:name, :email, :cpf, :phone, :photo)
     end
 end
