@@ -20,7 +20,7 @@
     <tr>
       <td><%= t.student %></td>
       <td><%= t.name%></td>
-      <td><%= l t.date_start %></td>
+      <td><%= l t.date_start unless t.date_start.nil? %></td>
        <td>
           <%= link_to edit_training_path(t), role: 'button' do %>
             <h4 title="Editar"><i class="icon-pencil"></i></h4>

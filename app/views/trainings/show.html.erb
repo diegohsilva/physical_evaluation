@@ -19,7 +19,7 @@
 <fieldset>
   <legend>Exercícios</legend>
     <% @training.exercise_trainings.each do |t| %>
-      <%= t %><hr>
+      <strong>Exercício: </strong> <%= t %> <strong>N° Repetições:</strong> <%= t.repetitions%><hr>
     <% end %>
 </fieldset>
 
