@@ -18,17 +18,20 @@ class TrainingsController < ApplicationController
   end
 
   def edit
+    @training.student_name = @training.student
+    @training.date_start = @training.date_start.strftime("%d/%m/%Y")
+    @training.date_end = @training.date_end.strftime("%d/%m/%Y")
   end
 
   def create
     @training = Training.new(training_params)
     @training.save
-    respond_with(@training)
+    respond_with @training, location: trainings_path
   end
 
   def update
     @training.update(training_params)
-    respond_with(@training)
+    respond_with @training, location: trainings_path
   end
 
   def destroy
@@ -42,6 +45,6 @@ class TrainingsController < ApplicationController
     end
 
     def training_params
-      params.require(:training).permit(:student_id, :name, :date_start, :date_end, :student_name, :description, exercise_trainings_attributes: [:id, :exercise_id, :_destroy])
+      params.require(:training).permit(:student_id, :name, :date_start, :date_end, :student_name, :description, exercise_trainings_attributes: [:id, :exercise_id, :repetitions, :effort, :_destroy])
     end
 end

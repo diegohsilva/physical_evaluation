@@ -1,0 +1,1 @@
+Paperclip.options[:command_path] = 'C:\Ruby21\ImageMagick-6.9.3-Q16'
