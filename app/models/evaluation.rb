@@ -19,4 +19,3 @@ class Evaluation < ActiveRecord::Base
 
 end
 
-end
