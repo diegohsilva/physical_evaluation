@@ -1,3 +1,4 @@
+
 class EvaluationsController < ApplicationController
   before_action :set_evaluation, only: [:show, :edit, :update, :destroy]
 
@@ -47,6 +48,6 @@ class EvaluationsController < ApplicationController
     end
 
     def evaluation_params
-      params.require(:evaluation).permit(:student_id, :evaluator_id, :evaluation_date, :end_date, :student_name, :evaluator_name)
+      params.require(:evaluation).permit(:student_id, :evaluator_id, :evaluation_date, :end_date, :student_name, :evaluator_name, :front_photo)
     end
 end

@@ -1,9 +1,10 @@
-<%= simple_form_for(@evaluation) do |f| %>
+<%= simple_form_for @evaluation, :html => { :multipart => true }  do |f| %>
   <div class="tabbable">
     <ul class="nav nav-tabs">
       <li class="active"> <%= link_to "Geral", "#general", :"data-toggle" => :tab %></li>
       <li> <%= link_to "Anamnese", "#anamnese", :"data-toggle" => :tab %></li>
       <li> <%= link_to "Composição Corporal", "#compCorp", :"data-toggle" => :tab %></li>
+      <li> <%= link_to "Fotos", "#fotos", :"data-toggle" => :tab %></li>
     </ul>
   </div>
 
@@ -18,6 +19,10 @@
 
     <div class="tab-pane" id="compCorp">
       <%= render "compCorp", :f => f %>
+    </div>
+
+		<div class="tab-pane" id="fotos">
+      <%= render "fotos", :f => f %>
     </div>
 
   </div>

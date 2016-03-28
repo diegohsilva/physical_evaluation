@@ -1,11 +1,13 @@
+
 class Evaluation < ActiveRecord::Base
   attr_accessor :student_name
   attr_accessor :evaluator_name
 
   belongs_to :student
   belongs_to :evaluator
+  mount_uploader :front_photo, FrontPhotoUploader
 
-  validates :student_id, :evaluator_id, presence: true
+  validates :student_name, :evaluator_name, presence: true
   validates :student_name, :evaluator_name, presence: true  
   validates_date :end_date, after: :evaluation_date, :after_message => "Data de vencimento não pode ser menor que data da avaliação"
 

@@ -607,12 +607,6 @@ a [class*=" icon-"] {
 .icon-copy {
   *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf0c5;');
 }
-.icon-paper-clip {
-  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf0c6;');
-}
-.icon-paperclip {
-  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf0c6;');
-}
 .icon-save {
   *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf0c7;');
 }
