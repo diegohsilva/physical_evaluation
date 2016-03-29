@@ -23,17 +23,17 @@
         <td><%= l evaluation.evaluation_date %></td>
          <td>
            <%= link_to edit_evaluation_path(evaluation), role: 'button' do %>
-            <h3 title="Editar"><i class="icon-pencil"></i></h3>
+            <h5 title="Editar"><i class="icon-pencil"></i></h5>
           <% end %>
         </td>
         <td>
           <%= link_to evaluation, method: :delete, data:{confirm: 'Confirma exclusão ?'}, role: 'button' do %>
-            <h3 title="Apagar"><i class="icon-trash"></i></h3>
+            <h5 title="Apagar"><i class="icon-trash"></i></h5>
           <% end %>              
         </td>
         <td>
           <%= link_to evaluation, role: 'button' do %>
-            <h3 title="Informações"><i class="icon-info"></i></h3>
+            <h5 title="Informações"><i class="icon-info"></i></h5>
           <% end %>
         </td>
       </tr>

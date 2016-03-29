@@ -23,17 +23,17 @@
       <td><%= l t.date_start unless t.date_start.nil? %></td>
        <td>
           <%= link_to edit_training_path(t), role: 'button' do %>
-            <h4 title="Editar"><i class="icon-pencil"></i></h4>
+            <h5 title="Editar"><i class="icon-pencil"></i></h5>
           <% end %>
         </td>
         <td>
           <%= link_to t, method: :delete, data:{confirm: 'Confirma exclusão ?'}, role: 'button' do %>
-            <h4 title="Apagar"><i class="icon-trash"></i></h4>
+            <h5 title="Apagar"><i class="icon-trash"></i></h5>
           <% end %>              
         </td>
         <td>
           <%= link_to t, role: 'button' do %>
-            <h4 title="Informações"><i class="icon-info"></i></h4>
+            <h5 title="Informações"><i class="icon-info"></i></h5>
           <% end %>
         </td>
   
