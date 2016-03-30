@@ -1,7 +1,8 @@
 .ui-autocomplete {
+	color: white;
   position: absolute;
   top: 100%;
-  left: 0;
+  left: 30;
   z-index: 1000;
   float: left;
   display: none;
@@ -10,7 +11,7 @@
   padding: 4px 0;
   margin: 2px 0 0 0;
   list-style: none;
-  background-color: #F5F5F5   ;
+  background-color:#6495ED;
   border-color: #ccc;
   border-color: rgba(0, 0, 0, 0.2);
   border-style: solid;
@@ -39,7 +40,7 @@
     &.ui-state-hover, &.ui-state-active {
       color: light_blue;
       text-decoration: none;
-      background-color: #0088cc;
+      background-color: red;
       border-radius: 0px;
       -webkit-border-radius: 0px;
       -moz-border-radius: 0px;
