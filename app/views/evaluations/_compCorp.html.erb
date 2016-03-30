@@ -1,7 +1,6 @@
-<table width="100%"> 
+<table  class="table table-bordered"> 
    <tr>
       <td width="50%">
-         <blockquote>
             <fieldset>
                <legend> Selecione o Protocolo </legend>
                <div class="row-fluid"> 
@@ -26,13 +25,9 @@
                <%= f.input :Ccorp_bioimpedancia, input_html: {  } %>
                </div>
                </div>   
-               <hr>
-            </fieldset>
-         </blockquote>
-
+            </fieldset>    
       </td>
-      <td width="50%">
-         <blockquote>
+      <td>
             <fieldset>
                <legend> Medidas </legend>
                <div class="row-fluid"> 
@@ -45,14 +40,11 @@
                   <%= f.input :Ccorp_altura, as: :string, input_html: { class: 'span3 decimal' } %>
                   </div>
                </div>   
-               <hr>
             </fieldset>
-         </blockquote>
-      </td>
+       </td>
    </tr>
    <tr>
-      <td width="50%">
-         <blockquote>
+      <td>
             <fieldset>
                <legend> Dobras Cutâneas </legend>
                <div class="row-fluid"> 
@@ -86,13 +78,9 @@
                      <%= f.input :Ccorp_AxilarMedia, as: :string, input_html: { class: 'span3 decimal' } %>
                   </div>
                </div>   
-               
-               <hr>
-               </fieldset>
-         </blockquote>      
-      </td>
-      <td width="50%">
-         <blockquote>
+           </fieldset>
+      	</td>
+      <td>
             <fieldset>
                <legend> Meta </legend>
                <div class="row-fluid"> 
@@ -100,9 +88,7 @@
                      <%= f.input :Ccorp_gordura , as: :string, input_html: { class: 'span3 decimal' } %>
                   </div> 
                </div>   
-               <hr>
             </fieldset>
-         </blockquote>
       </td>
    </tr>
 </table>

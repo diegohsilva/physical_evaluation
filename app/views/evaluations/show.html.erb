@@ -1,6 +1,23 @@
-
-<%= image_tag @evaluation.front_photo_url, width: '150' %>
-
+<table class='table'>
+	<tr>
+		<td align="center">
+			<%= image_tag @evaluation.front_photo_url, width: '150' %><br>
+			<b>Foto Frente</b>
+		</td>
+		<td align="center">
+			<%= image_tag @evaluation.front_contracted_photo_url, width: '150' %><br>
+			<b>Foto frente contraido</b>
+		</td>
+		<td align="center">
+			<%= image_tag @evaluation.side_photo_url, width: '150' %><br>
+			<b>Foto de lado </b>
+		</td>
+		<td align="center">
+			<%= image_tag @evaluation.back_photo_url, width: '150' %>	<br>	
+			<b>foto de costa</b>
+		</td>
+	</tr>
+</table>
 <p>
   <strong>Aluno:</strong>
   <%= @evaluation.student %>

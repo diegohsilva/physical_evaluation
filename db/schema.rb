@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160328162438) do
+ActiveRecord::Schema.define(version: 20160329171634) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -65,6 +65,10 @@ ActiveRecord::Schema.define(version: 20160328162438) do
     t.boolean  "Ccorp_guedes"
     t.float    "Ccorp_abdominal"
     t.string   "front_photo"
+    t.string   "side_photo"
+    t.string   "back_photo"
+    t.string   "front_contracted_photo"
+    t.string   "back_contracted_photo"
   end
 
   add_index "evaluations", ["evaluator_id"], name: "index_evaluations_on_evaluator_id", using: :btree
