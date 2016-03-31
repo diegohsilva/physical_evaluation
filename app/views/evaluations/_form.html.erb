@@ -4,6 +4,7 @@
       <li class="active"> <%= link_to "Geral", "#general", :"data-toggle" => :tab %></li>
       <li> <%= link_to "Anamnese", "#anamnese", :"data-toggle" => :tab %></li>
       <li> <%= link_to "Composição Corporal", "#compCorp", :"data-toggle" => :tab %></li>
+      <li> <%= link_to "Perímetros", "#perimetro", :"data-toggle" => :tab %></li>
       <li> <%= link_to "Fotos", "#fotos", :"data-toggle" => :tab %></li>
     </ul>
   </div>
@@ -19,6 +20,10 @@
 
     <div class="tab-pane" id="compCorp">
       <%= render "compCorp", :f => f %>
+    </div>
+
+    <div class="tab-pane" id="perimetro">
+      <%= render "perimetro", :f => f %>
     </div>
 
 		<div class="tab-pane" id="fotos">
