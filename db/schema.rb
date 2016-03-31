@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160329171634) do
+ActiveRecord::Schema.define(version: 20160331165102) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,8 +21,8 @@ ActiveRecord::Schema.define(version: 20160329171634) do
     t.integer  "evaluator_id"
     t.date     "evaluation_date"
     t.date     "end_date"
-    t.datetime "created_at",                         null: false
-    t.datetime "updated_at",                         null: false
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
     t.boolean  "Amn_AumentoMassa"
     t.boolean  "Amn_MelhoraAerobico"
     t.boolean  "Amn_Saude"
@@ -30,18 +30,18 @@ ActiveRecord::Schema.define(version: 20160329171634) do
     t.boolean  "Amn_Condicionamento"
     t.boolean  "Amn_PerdaPeso"
     t.boolean  "Amn_praticaAtividade"
-    t.string   "Amn_Atividade",          limit: 30
+    t.string   "Amn_Atividade",             limit: 30
     t.integer  "Amn_Frequencia"
     t.boolean  "Amn_DorDorsal"
     t.boolean  "Amn_DorLombar"
     t.boolean  "Amn_DorCervical"
     t.boolean  "Amn_Limitacao"
-    t.string   "Amn_Dor",                limit: 40
-    t.string   "Amn_Cirurgia",           limit: 50
-    t.string   "Amn_Medicamento",        limit: 50
-    t.string   "Amn_problemaSaude",      limit: 30
+    t.string   "Amn_Dor",                   limit: 40
+    t.string   "Amn_Cirurgia",              limit: 50
+    t.string   "Amn_Medicamento",           limit: 50
+    t.string   "Amn_problemaSaude",         limit: 30
     t.string   "Amn_FrequenciaRepouso"
-    t.string   "Amn_PressaoRepouso",     limit: 10
+    t.string   "Amn_PressaoRepouso",        limit: 10
     t.boolean  "Amn_ProblemaCardiado"
     t.boolean  "Amn_DorPeito"
     t.boolean  "Amn_DorPeitoUltimoMes"
@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 20160329171634) do
     t.boolean  "Amn_ProblemaOsseo"
     t.boolean  "Amn_MedicamentoPressao"
     t.boolean  "Amn_impedimento"
-    t.string   "Amn_Observacoes",        limit: 300
+    t.string   "Amn_Observacoes",           limit: 300
     t.boolean  "Ccorp_Jackson7"
     t.boolean  "Ccorp_Jackson3"
     t.boolean  "Ccorp_bioimpedancia"
@@ -64,23 +64,54 @@ ActiveRecord::Schema.define(version: 20160329171634) do
     t.float    "Ccorp_AxilarMedia"
     t.boolean  "Ccorp_guedes"
     t.float    "Ccorp_abdominal"
+    t.string   "side_photo_file_name"
+    t.string   "side_photo_content_type"
+    t.integer  "side_photo_file_size"
+    t.datetime "side_photo_updated_at"
     t.string   "front_photo"
     t.string   "side_photo"
     t.string   "back_photo"
     t.string   "front_contracted_photo"
     t.string   "back_contracted_photo"
+    t.float    "antebraco_direito"
+    t.float    "antebraco_esquerdo"
+    t.float    "braco_relaxado_direito"
+    t.float    "braco_relaxado_esquerdo"
+    t.float    "braco_contraido_direito"
+    t.float    "braco_contraiddo_esquerdo"
+    t.float    "coxa_proximal_direito"
+    t.float    "coxa_proximal_esquerdo"
+    t.float    "coxa_medial_direito"
+    t.float    "coxa_medial_esquerdo"
+    t.float    "coxa_distal_direito"
+    t.float    "coxa_distal_esquerdo"
+    t.float    "panturrilha_direito"
+    t.float    "panturrilha_esquerdo"
+    t.float    "abdomen"
+    t.float    "quadril"
+    t.float    "cintura"
+    t.float    "torax"
+    t.float    "ombro"
+    t.float    "pescoco"
+    t.float    "punho"
+    t.float    "umero"
+    t.float    "femur"
   end
 
   add_index "evaluations", ["evaluator_id"], name: "index_evaluations_on_evaluator_id", using: :btree
   add_index "evaluations", ["student_id"], name: "index_evaluations_on_student_id", using: :btree
 
   create_table "evaluators", force: :cascade do |t|
-    t.string   "name",       limit: 60
-    t.string   "email",      limit: 60
+    t.string   "name",               limit: 60
+    t.string   "email",              limit: 60
     t.string   "cpf"
     t.string   "phone"
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
   create_table "exercise_trainings", force: :cascade do |t|
