@@ -13,3 +13,5 @@ pt-BR:
         date_start: 'Data Início'
         date_end: 'Data Fim'
         student_name: 'Aluno'
+        week_day: 'Dia da Semana'
+        break_time: 'Tempo de descanso entre exercícios'

@@ -8,4 +8,8 @@ class User < ActiveRecord::Base
   def to_s
   	 student if student.present?
   end
+  
+  def student?
+    student.present?
+  end
 end

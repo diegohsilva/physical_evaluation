@@ -1,8 +1,23 @@
 <div class="nested-fields">
 	<div class="row-fluid">
-		<div class="span4"><%= f.input :exercise_id, collection: Exercise.all,  label: 'Exercicio', input_html: {class: 'span12'} %></div>	
-		<div class="span3"> <%= f.input :repetitions, label:'N° Repetições', input_html: {class: 'span3'}%> </div>
-		<div class="span3"> <%= f.input :effort, label:'Esforço', input_html: {class: 'span3'}%> </div>
-		<div class="span3"><br><br><%= link_to_remove_association "", f, :class => "icon-trash" %></div>
+		<table class="table">
+			<tr>
+				<td>
+					<%= f.input :exercise_id, collection: Exercise.all,  label: 'Exercicio', input_html: {class: 'span8'} %>		  
+				</td>
+				<td>
+					<%= f.input :repetitions, as: :string, label:'N° Repetições', input_html: {class: 'span3'}%>				  
+				</td>
+				<td>
+					<%= f.input :effort, label:'Esforço', input_html: {class: 'span3'}%>			
+				</td>
+				<td>
+					<%= f.input :series, as: :string, label:'Series', input_html: {class: 'span3'}%> 	
+				</td>
+				<td>
+					   <%= link_to_remove_association "", f, :class => "icon-trash" %>
+				</td>
+			</tr>
+		</table>
 	</div>
 </div>

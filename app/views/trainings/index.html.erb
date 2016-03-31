@@ -11,16 +11,19 @@
  
 <table class="table">
   <thead>
+    <th>Data Início</th>
+		<th> Dia da Semana</th>
     <th>Aluno</th>
     <th>Descrição</th>
-    <th>Data Início</th>
     <th colspan="3" width="5%"></th>
   </thead>
   <% @trainings.each do |t| %>
     <tr>
+      <td><%= l t.date_start unless t.date_start.nil? %></td>
+			<td> <%= t.week_day_humanize %></td>
+      
       <td><%= t.student %></td>
       <td><%= t.name%></td>
-      <td><%= l t.date_start unless t.date_start.nil? %></td>
        <td>
           <%= link_to edit_training_path(t), role: 'button' do %>
             <h5 title="Editar"><i class="icon-pencil"></i></h5>

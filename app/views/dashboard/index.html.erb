@@ -6,10 +6,10 @@
 				<table class="table">
 					<tr>
 						<td>
-							<strong>Há <%= @evaluations.count%> avaliação(ões) vencendo hoje.</strong>
+							<strong>Há <%= @evaluations.count%> avaliação(ões) vencendo daqui 7 dias.</strong>
 						</td>
 						<td width="1%">
-							<%= link_to students_path, role: 'button' do %>
+							<%= link_to evaluations_path(expired: true), role: 'button' do %>
 								<i class="icon-eye-open"></i>
 							<% end %>
 						</td>
@@ -18,4 +18,18 @@
 			</div>
 		</div>
 	</div>
+<% end %>
+<% if @trainings.any? %>
+<div class="container-fluid" id="messages-content">
+	<div class="row-fluid">
+		<div class="alert alert-success">
+			<i class="icon-calendar"></i>
+				<strong> Olá <%= current_user.student.name %> seu treino para hoje é</strong><br>
+				<% @trainings.each do |t| %>
+					<%= link_to "#{t.name}", t %>
+				<% end %>
+		</div>
+	</div>
+</div>
+
 <% end %>
