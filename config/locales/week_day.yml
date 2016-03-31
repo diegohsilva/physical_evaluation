@@ -1,0 +1,10 @@
+pt-BR:
+  enumerations:
+    week_day:
+      sunday: "Domingo"
+      monday: "Segunda"
+      tuesday: "Terça"
+      wednesday: "Quarta"
+      thursday: "Quinta"
+      friday: "Sexta"
+      saturday: "Sábado"

@@ -13,6 +13,7 @@ class StudentsController < ApplicationController
   end
 
   def show
+    @trainings = @student.trainings
     respond_with(@student)
   end
 

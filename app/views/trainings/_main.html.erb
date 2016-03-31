@@ -10,7 +10,16 @@
       <%= f.input :name, as: :text, input_html: { class: 'span7' } %>
    </div>
   </div>
-  
+ 	
+	<div class="row-fluid"> 
+    <div class="span5">
+      <%= f.input :week_day, collection: WeekDay, input_html: { class: 'span7' } %>
+    </div>
+    <div class="span3">
+      <%= f.input :break_time, as: :string, input_html: { class: 'span3 time' } %>
+    </div>
+  </div>
+
   <div class="row-fluid"> 
       <div class="span4"> <%= f.input :date_start, as: :string, input_html: { class: 'span4 date', data: {provide:'datepicker' } } %></div>
       <div class="span4"><%= f.input :date_end, as: :string, input_html: { class: 'span4 date', data: {provide:'datepicker'} } %></div>

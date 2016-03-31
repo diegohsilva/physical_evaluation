@@ -1,0 +1,7 @@
+<h3>
+<ul class="nav nav-pills">
+	<li role="presentation"  class="<% if  params[:controller] == "dashboard"%>active<%end%>"><%= link_to "", root_path , class: " icon-home"%></li>
+
+	<li role="presentation"  class="<% if  params[:controller] == "students"%>active<%end%>"><%= link_to "", current_user.student , class: " icon-user"%></li>
+</ul>
+</h3>

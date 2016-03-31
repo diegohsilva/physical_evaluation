@@ -5,7 +5,11 @@ class EvaluationsController < ApplicationController
   respond_to :html
 
   def index
-    @evaluations = Evaluation.all
+    if params[:expired] == "true"
+      @evaluations =  Evaluation.by_expired(Date.current + 7.day)  		
+    else
+      @evaluations = Evaluation.all      
+    end  
     respond_with(@evaluations)
   end
 
@@ -17,15 +21,17 @@ class EvaluationsController < ApplicationController
     @evaluation = Evaluation.new
     @evaluation.student = Student.new
     @evaluation.evaluator = Evaluator.new
-    #@evaluation.evaluation_date = Date.current.strftime("%d/%m/%Y")
-    #@evatuation.end_date = Date.current.strftime("%d/%m/%Y")
+    @evaluation.evaluation_date = Date.current.strftime("%d/%m/%Y")
+    @evaluation.end_date = Date.current.strftime("%d/%m/%Y")
 
     respond_with(@evaluation)
   end
 
   def edit
     @evaluation.evaluation_date = @evaluation.evaluation_date.strftime("%d/%m/%Y")
-    @evaluation.end_date =  @evaluation.end_date.strftime("%d/%m/%Y")    
+    @evaluation.end_date =  @evaluation.end_date.strftime("%d/%m/%Y")   
+    @evaluation.student_name = @evaluation.student.name
+    @evaluation.evaluator_name = @evaluation.evaluator.name 
   end
 
   def create
