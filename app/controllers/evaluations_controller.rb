@@ -57,6 +57,6 @@ class EvaluationsController < ApplicationController
     end
 
     def evaluation_params
-      params.require(:evaluation).permit(:student_id, :evaluator_id, :evaluation_date, :end_date, :student_name, :evaluator_name, :front_photo, :side_photo, :back_photo, :front_contracted_photo, :back_contracted_photo )
+      params.require(:evaluation).permit(:student_id, :evaluator_id, :evaluation_date, :end_date, :student_name, :evaluator_name, :front_photo, :side_photo, :back_photo, :front_contracted_photo, :back_contracted_photo,:Amn_Desmaio,:Amn_AumentoMassa,:Amn_MelhoraAerobico,:Amn_Saude,:Amn_Fortalecimento,:Amn_Condicionamento,:Amn_PerdaPeso,:Amn_praticaAtividade,:Amn_Atividade,:Amn_Frequencia,:Amn_DorDorsal,:Amn_DorLombar,:Amn_DorCervical,:Amn_Limitacao,:Amn_Dor,:Amn_Cirurgia, :Amn_Medicamento,:Amn_problemaSaude,:Amn_FrequenciaRepouso,:Amn_PressaoRepouso,:Amn_ProblemaCardiado,:Amn_DorPeito,:Amn_DorPeitoUltimoMes,:Amn_ProblemaOsseo,:Amn_MedicamentoPressao,:Amn_impedimento,:Amn_Observacoes)
     end
 end
