@@ -64,10 +64,6 @@ ActiveRecord::Schema.define(version: 20160331165102) do
     t.float    "Ccorp_AxilarMedia"
     t.boolean  "Ccorp_guedes"
     t.float    "Ccorp_abdominal"
-    t.string   "side_photo_file_name"
-    t.string   "side_photo_content_type"
-    t.integer  "side_photo_file_size"
-    t.datetime "side_photo_updated_at"
     t.string   "front_photo"
     t.string   "side_photo"
     t.string   "back_photo"
@@ -102,16 +98,12 @@ ActiveRecord::Schema.define(version: 20160331165102) do
   add_index "evaluations", ["student_id"], name: "index_evaluations_on_student_id", using: :btree
 
   create_table "evaluators", force: :cascade do |t|
-    t.string   "name",               limit: 60
-    t.string   "email",              limit: 60
+    t.string   "name",       limit: 60
+    t.string   "email",      limit: 60
     t.string   "cpf"
     t.string   "phone"
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
-    t.string   "photo_file_name"
-    t.string   "photo_content_type"
-    t.integer  "photo_file_size"
-    t.datetime "photo_updated_at"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
   end
 
   create_table "exercise_trainings", force: :cascade do |t|
