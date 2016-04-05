@@ -6,13 +6,13 @@
 					<%= f.input :exercise_id, collection: Exercise.all,  label: 'Exercicio', input_html: {class: 'span8'} %>		  
 				</td>
 				<td>
-					<%= f.input :repetitions, as: :string, label:'N° Repetições', input_html: {class: 'span3'}%>				  
+					<%= f.input :series, as: :string, label:'Series', input_html: {class: 'span3'}%> 						
 				</td>
 				<td>
-					<%= f.input :effort, label:'Esforço', input_html: {class: 'span3'}%>			
+					<%= f.input :repetitions, as: :string, label:'N° Repetições', input_html: {class: 'span3'}%>				 
 				</td>
 				<td>
-					<%= f.input :series, as: :string, label:'Series', input_html: {class: 'span3'}%> 	
+					<%= f.input :effort, label:'Carga', input_html: {class: 'span3'}%>			
 				</td>
 				<td>
 					   <%= link_to_remove_association "", f, :class => "icon-trash" %>

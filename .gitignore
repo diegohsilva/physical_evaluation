@@ -14,3 +14,7 @@
 /config/database.yml
 *.jpg
 *.yml
+
+config/database.yml
+
+config/database.yml
