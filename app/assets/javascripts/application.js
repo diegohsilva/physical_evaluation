@@ -107,7 +107,9 @@ var maskSetup = function (html) {
     html.find('input.cpf').inputmask("999.999.999-99");
     html.find('input.average').inputmask("99.99");
     html.find('input.time').inputmask("99:99");
-    html.find("input.integer").singlemask(/\d/);
+   	html.find('input.float').inputmask("999.99");
+ 
+   	html.find("input.integer").singlemask(/\d/);
     html.find("input.decimal").priceFormat({
         prefix: '',
         centsSeparator: ',',

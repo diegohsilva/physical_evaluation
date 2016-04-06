@@ -18,3 +18,4 @@ pt-BR:
         phone: 'Telefone'
         cell_phone: 'Celular'
         zipcode: 'CEP'
+        gender: 'Sexo'

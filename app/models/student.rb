@@ -5,10 +5,11 @@ class Student < ActiveRecord::Base
 
 	validates :name, presence: true
 	validates :email, presence: true
+	validates :gender, presence: true
 	validates_date :birth_date, :before => :today
 
-
 	has_enumeration_for :state, with: State
+	has_enumeration_for :gender, with: Gender, create_helpers: true
 
 	after_save :create_user
 

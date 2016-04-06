@@ -21,5 +21,28 @@ class Evaluation < ActiveRecord::Base
   def to_s
      name			
   end
+  
+  def imc
+    c = ccorp_altura * ccorp_altura 
+      (ccorp_peso / c).round(2)
+  end
+  
+  def classification_imc
+      if student.male?
+        if imc > 43
+          "Obsidade mórbida"
+        elsif (30..39.9).include?(imc)
+          "Obsidade moderada"
+        elsif (25..29.9).include?(imc)
+          "Obesidade leve"
+        elsif (20..24.9).include?(imc)
+          "Obesidade normal"
+        elsif imc < 20
+          "Obesidade abaixo do normal"
+        end     
+      else
+        
+      end
+  end
 
 end
