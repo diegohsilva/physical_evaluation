@@ -5,6 +5,10 @@
    <div class="span4">
      <%= f.input :birth_date, as: :string, input_html: {data: {provide:'datepicker' }, class:'span4 date'} %>
   </div>
+  <div class="span2">
+		<%= f.input :gender, collection: Gender , input_html: {class: 'span12'} %>
+	</div>
+
 </div>
 <br>
 <div class="row-fluid"> 

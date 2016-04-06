@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160331165102) do
+ActiveRecord::Schema.define(version: 20160406193514) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,20 +50,20 @@ ActiveRecord::Schema.define(version: 20160331165102) do
     t.boolean  "amn_medicamentopressao"
     t.boolean  "amn_impedimento"
     t.string   "amn_observacoes",           limit: 300
-    t.boolean  "Ccorp_Jackson7"
-    t.boolean  "Ccorp_Jackson3"
-    t.boolean  "Ccorp_bioimpedancia"
-    t.float    "Ccorp_peso"
-    t.float    "Ccorp_altura"
-    t.float    "Ccorp_gordura"
-    t.float    "Ccorp_subescapular"
-    t.float    "Ccorp_tricipital"
-    t.float    "Ccorp_coxa"
-    t.float    "Ccorp_peitoral"
-    t.float    "Ccorp_supraIliaca"
-    t.float    "Ccorp_AxilarMedia"
-    t.boolean  "Ccorp_guedes"
-    t.float    "Ccorp_abdominal"
+    t.boolean  "ccorp_jackson7"
+    t.boolean  "ccorp_jackson3"
+    t.boolean  "ccorp_bioimpedancia"
+    t.float    "ccorp_peso"
+    t.float    "ccorp_altura"
+    t.float    "ccorp_gordura"
+    t.float    "ccorp_subescapular"
+    t.float    "ccorp_tricipital"
+    t.float    "ccorp_coxa"
+    t.float    "ccorp_peitoral"
+    t.float    "ccorp_supraIliaca"
+    t.float    "ccorp_axilarmedia"
+    t.boolean  "ccorp_guedes"
+    t.float    "ccorp_abdominal"
     t.string   "front_photo"
     t.string   "side_photo"
     t.string   "back_photo"
@@ -140,6 +140,7 @@ ActiveRecord::Schema.define(version: 20160331165102) do
     t.string   "cell_phone",     limit: 20
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
+    t.integer  "gender"
   end
 
   create_table "trainings", force: :cascade do |t|
