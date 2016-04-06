@@ -23,33 +23,33 @@ ActiveRecord::Schema.define(version: 20160331165102) do
     t.date     "end_date"
     t.datetime "created_at",                            null: false
     t.datetime "updated_at",                            null: false
-    t.boolean  "Amn_AumentoMassa"
-    t.boolean  "Amn_MelhoraAerobico"
-    t.boolean  "Amn_Saude"
-    t.boolean  "Amn_Fortalecimento"
-    t.boolean  "Amn_Condicionamento"
-    t.boolean  "Amn_PerdaPeso"
-    t.boolean  "Amn_praticaAtividade"
-    t.string   "Amn_Atividade",             limit: 30
-    t.integer  "Amn_Frequencia"
-    t.boolean  "Amn_DorDorsal"
-    t.boolean  "Amn_DorLombar"
-    t.boolean  "Amn_DorCervical"
-    t.boolean  "Amn_Limitacao"
-    t.string   "Amn_Dor",                   limit: 40
-    t.string   "Amn_Cirurgia",              limit: 50
-    t.string   "Amn_Medicamento",           limit: 50
-    t.string   "Amn_problemaSaude",         limit: 30
-    t.string   "Amn_FrequenciaRepouso"
-    t.string   "Amn_PressaoRepouso",        limit: 10
-    t.boolean  "Amn_ProblemaCardiado"
-    t.boolean  "Amn_DorPeito"
-    t.boolean  "Amn_DorPeitoUltimoMes"
-    t.boolean  "Amn_Desmaio"
-    t.boolean  "Amn_ProblemaOsseo"
-    t.boolean  "Amn_MedicamentoPressao"
-    t.boolean  "Amn_impedimento"
-    t.string   "Amn_Observacoes",           limit: 300
+    t.boolean  "amn_aumentomassa"
+    t.boolean  "amn_melhoraaerobico"
+    t.boolean  "amn_saude"
+    t.boolean  "amn_fortalecimento"
+    t.boolean  "amn_condicionamento"
+    t.boolean  "amn_perdapeso"
+    t.boolean  "amn_praticaatividade"
+    t.string   "amn_atividade",             limit: 30
+    t.integer  "amn_frequencia"
+    t.boolean  "amn_dordorsal"
+    t.boolean  "amn_dorlombar"
+    t.boolean  "amn_dorcervical"
+    t.boolean  "amn_limitacao"
+    t.string   "amn_dor",                   limit: 40
+    t.string   "amn_cirurgia",              limit: 50
+    t.string   "amn_medicamento",           limit: 50
+    t.string   "amn_problemasaude",         limit: 30
+    t.string   "amn_frequenciarepouso"
+    t.string   "amn_pressaorepouso",        limit: 10
+    t.boolean  "amn_problemacardiado"
+    t.boolean  "amn_dorpeito"
+    t.boolean  "amn_dorpeitoultimomes"
+    t.boolean  "amn_desmaio"
+    t.boolean  "amn_problemaosseo"
+    t.boolean  "amn_medicamentopressao"
+    t.boolean  "amn_impedimento"
+    t.string   "amn_observacoes",           limit: 300
     t.boolean  "Ccorp_Jackson7"
     t.boolean  "Ccorp_Jackson3"
     t.boolean  "Ccorp_bioimpedancia"

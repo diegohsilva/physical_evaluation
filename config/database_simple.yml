@@ -1,7 +1,0 @@
-development:
-  adapter: postgresql
-  encoding: unicode
-  database: physical_evaluation
-  pool: 5
-  username: postgres
-  password: diegoh6

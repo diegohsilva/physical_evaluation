@@ -1,31 +1,31 @@
 class AddFieldsAnamneseToEvaluations < ActiveRecord::Migration
   def change
-  	add_column :evaluations, :Amn_AumentoMassa,      :boolean
-  	add_column :evaluations, :Amn_MelhoraAerobico,   :boolean
-  	add_column :evaluations, :Amn_Saude,             :boolean
-  	add_column :evaluations, :Amn_Fortalecimento,    :boolean
-  	add_column :evaluations, :Amn_Condicionamento,   :boolean
-  	add_column :evaluations, :Amn_PerdaPeso,         :boolean
-  	add_column :evaluations, :Amn_praticaAtividade,  :boolean
-  	add_column :evaluations, :Amn_Atividade,         :string, limit: 30
-  	add_column :evaluations, :Amn_Frequencia,        :integer
-  	add_column :evaluations, :Amn_DorDorsal,         :boolean
-  	add_column :evaluations, :Amn_DorLombar,         :boolean
-  	add_column :evaluations, :Amn_DorCervical,       :boolean
-  	add_column :evaluations, :Amn_Limitacao,         :boolean
-  	add_column :evaluations, :Amn_Dor,               :string, limit: 40
-  	add_column :evaluations, :Amn_Cirurgia,          :string, limit: 50
-  	add_column :evaluations, :Amn_Medicamento,       :string, limit: 50
-  	add_column :evaluations, :Amn_problemaSaude,     :string, limit: 30
-  	add_column :evaluations, :Amn_FrequenciaRepouso, :string
-  	add_column :evaluations, :Amn_PressaoRepouso,    :string, limit: 10
-  	add_column :evaluations, :Amn_ProblemaCardiado,  :boolean
-  	add_column :evaluations, :Amn_DorPeito,          :boolean
-  	add_column :evaluations, :Amn_DorPeitoUltimoMes, :boolean
-  	add_column :evaluations, :Amn_Desmaio,           :boolean
-  	add_column :evaluations, :Amn_ProblemaOsseo,     :boolean
-  	add_column :evaluations, :Amn_MedicamentoPressao,:boolean
-  	add_column :evaluations, :Amn_impedimento,       :boolean
-  	add_column :evaluations, :Amn_Observacoes,       :string, limit: 300
+  	add_column :evaluations, :amn_aumentomassa,      :boolean
+  	add_column :evaluations, :amn_melhoraaerobico,   :boolean
+  	add_column :evaluations, :amn_saude,             :boolean
+  	add_column :evaluations, :amn_fortalecimento,    :boolean
+  	add_column :evaluations, :amn_condicionamento,   :boolean
+  	add_column :evaluations, :amn_perdapeso,         :boolean
+  	add_column :evaluations, :amn_praticaatividade,  :boolean
+  	add_column :evaluations, :amn_atividade,         :string, limit: 30
+  	add_column :evaluations, :amn_frequencia,        :integer
+  	add_column :evaluations, :amn_dordorsal,         :boolean
+  	add_column :evaluations, :amn_dorlombar,         :boolean
+  	add_column :evaluations, :amn_dorcervical,       :boolean
+  	add_column :evaluations, :amn_limitacao,         :boolean
+  	add_column :evaluations, :amn_dor,               :string, limit: 40
+  	add_column :evaluations, :amn_cirurgia,          :string, limit: 50
+  	add_column :evaluations, :amn_medicamento,       :string, limit: 50
+  	add_column :evaluations, :amn_problemasaude,     :string, limit: 30
+  	add_column :evaluations, :amn_frequenciarepouso, :string
+  	add_column :evaluations, :amn_pressaorepouso,    :string, limit: 10
+  	add_column :evaluations, :amn_problemacardiado,  :boolean
+  	add_column :evaluations, :amn_dorpeito,          :boolean
+  	add_column :evaluations, :amn_dorpeitoultimomes, :boolean
+  	add_column :evaluations, :amn_desmaio,           :boolean
+  	add_column :evaluations, :amn_problemaosseo,     :boolean
+  	add_column :evaluations, :amn_medicamentopressao,:boolean
+  	add_column :evaluations, :amn_impedimento,       :boolean
+  	add_column :evaluations, :amn_observacoes,       :string, limit: 300
   end
 end
