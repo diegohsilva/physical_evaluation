@@ -37,11 +37,10 @@ class EvaluationsController < ApplicationController
   def create
     @evaluation = Evaluation.new(evaluation_params)
     @evaluation.save
-    respond_with @evaluation, location: evaluations_path
+    respond_with(@evaluation)
   end
 
-  def update
-  
+  def update  
     @evaluation.update(evaluation_params)
     respond_with(@evaluation)
   end
