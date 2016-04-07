@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160406193514) do
+ActiveRecord::Schema.define(version: 20160407163711) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -92,6 +92,41 @@ ActiveRecord::Schema.define(version: 20160406193514) do
     t.float    "punho"
     t.float    "umero"
     t.float    "femur"
+    t.string   "photo_lateral_direita"
+    t.string   "photo_lateral_esquerda"
+    t.string   "photo_posterior"
+    t.string   "photo_anterior"
+    t.boolean  "anterversao_de_quadril"
+    t.boolean  "retroversao_de_quadril"
+    t.boolean  "rotacao_interna_ombros"
+    t.boolean  "retificacao_cervical"
+    t.boolean  "retificacao_lombar"
+    t.boolean  "protusao_abdominal"
+    t.boolean  "hiperlordose_cervical"
+    t.boolean  "hiperlordose_lombar"
+    t.boolean  "hipercifose_toracica"
+    t.boolean  "pe_plano"
+    t.boolean  "pe_cavo"
+    t.boolean  "pe_calcaneo"
+    t.boolean  "pe_equino"
+    t.boolean  "genu_flexo"
+    t.boolean  "genu_recurvado"
+    t.boolean  "escoliose_cervical"
+    t.boolean  "escoliose_toracica"
+    t.boolean  "escoliose_lombar"
+    t.boolean  "protacao_escapular"
+    t.boolean  "retracao_escapular"
+    t.boolean  "depressao_escapular"
+    t.boolean  "pe_vago"
+    t.boolean  "pe_varo"
+    t.boolean  "encurtamento_de_trapezio"
+    t.boolean  "genu_valgo"
+    t.boolean  "genu_varo"
+    t.boolean  "pe_aduto"
+    t.boolean  "pe_abduto"
+    t.integer  "ombros_assimetricos"
+    t.integer  "assimetria_quadril"
+    t.string   "observacoes"
   end
 
   add_index "evaluations", ["evaluator_id"], name: "index_evaluations_on_evaluator_id", using: :btree
