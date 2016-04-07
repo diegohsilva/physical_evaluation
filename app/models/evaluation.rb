@@ -37,7 +37,7 @@ class Evaluation < ActiveRecord::Base
           "Obesidade leve"
         elsif (20..24.9).include?(imc)
           "Obesidade normal"
-        elsif imc < 20
+        elsif 20
           "Obesidade abaixo do normal"
         end     
       else
