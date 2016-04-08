@@ -1,90 +1,198 @@
-<p>
-  <strong>Aluno:</strong>
-  <%= @evaluation.student %>
-</p>
+<%= imc =  @evaluation.imc %>				
+<%= classification =  @evaluation.classification_imc %>			
+<%= @evaluation.gordura %>	
+<%= g = @evaluation.classification_coporral_fat[:position] %>	
 
-<p>
-  <strong>Avaliador:</strong>
-  <%= @evaluation.evaluator %>
-</p>
-
-<p>
-  <strong>Data:</strong>
-  <%= l @evaluation.evaluation_date %>
-</p>
-
-<p>
-  <strong>Data de Vencimento:</strong>
-  <%= l @evaluation.end_date %>
-</p>
-<p>
-	<strong>IMC: </strong> <%= imc =  @evaluation.imc %>
-</p>
-
-<% classification =  @evaluation.classification_imc %>
-
-<% if classification == "Obsidade mórbida" %>
-	<p class="text-error">
-		<strong> Classificação IMC: </strong>
-		<%= classification %>
-	</p>	
-<% end %>
-
-<% if classification == "Obsidade moderada" %>
-	<p class="text-error">
-		<strong> Classificação IMC: </strong>
-		<%= classification %>
-	</p>	
-<% end %>
-
-<% if classification == "Obesidade leve" %>
-	<p class="text-info">
-		<strong> Classificação IMC: </strong>
-		<%= classification %>
-	</p>	
-<% end %>
-
-<% if classification == "Normal" %>
-	<p class="text-success">
-		<strong> Classificação IMC: </strong>
-		<%= classification %>
-	</p>	
-<% end %>
-
-<% if classification == "Abaixo do normal" %>
-	<p class="text-error">
-		<strong> Classificação IMC: </strong>
-		<%= classification %>
-	</p>	
-<% end %>
-<p>
-	<strong>Gordura Corporal: </strong> <%= imc =  @evaluation.gordura %> <strong>%</strong>
-</p>
-<p>
-	<strong>Massa Magra: </strong> <%= imc =  @evaluation.massa_magra %> <strong>%</strong>
-</p>
-<table class='table'>
+<h4 class="text-info text-center">Resultado da Avaliação</h4>
+<br	>			
+<table class="table table-bordered">
 	<tr>
-		<td align="center">
-			<%= image_tag @evaluation.front_photo_url, width: '150' %><br>
-			<b>Foto Frente</b>
+		<td width="50%">
+			<strong>Nome: </strong> <%= @evaluation.student.name.upcase %>
 		</td>
-		<td align="center">
-			<%= image_tag @evaluation.front_contracted_photo_url, width: '150' %><br>
-			<b>Foto frente contraido</b>
+		<td>
+			<strong>Altura:</strong> <%= @evaluation.ccorp_altura %> metros
 		</td>
-		<td align="center">
-			<%= image_tag @evaluation.side_photo_url, width: '150' %><br>
-			<b>Foto de lado </b>
-		</td>
-		<td align="center">
-			<%= image_tag @evaluation.back_photo_url, width: '150' %>	<br>	
-			<b>foto de costa</b>
+		<td>
+			<strong>Data Avaliação: </strong><%= l @evaluation.evaluation_date %>
 		</td>
 	</tr>
-</table> 
-
-<p class="form-actions" >
-   <%= link_to 'Editar', edit_evaluation_path(@evaluation), class: "btn btn-primary"  %> 
-   <%= link_to 'Voltar', evaluations_path, class: "btn"  %>
-</p>
+	<tr>
+		<td>
+			<strong>Idade:</strong>
+			<%= @evaluation.student.age[:ano] %> anos
+			<%= @evaluation.student.age[:mes] %> meses
+			<%= @evaluation.student.age[:dia] %> dias
+		</td>
+		<td colspan="2">
+			<strong>Peso:</strong> <%= @evaluation.ccorp_peso %> quilos
+		</td>
+	</tr>
+</table>
+<h4 class="text-info">Composição corporal</h4>
+<table class="table table-bordered">
+	<tr>
+		<td width="15%">
+		</td>
+		<th>
+			<p class="text-center">
+				Abaixo
+			</p>
+		</th>
+		<th>
+			<p class="text-center">
+				Normal				
+			</p>
+		</th>
+		<th>
+			<p class="text-center">
+				Acima
+			</p>
+		</th>
+		<th>
+			<p class="text-center">
+				Faixa normal
+			</p>
+		</th>	
+	</tr>	
+	<tr>
+		<td>
+			<div class="alert alert-warring">
+				Peso				
+			</div>
+		</td>
+		<td>
+			<% if classification == "Abaixo do normal" %>
+				<p class="text-center">
+					<i class="icon-ok"></i>							
+				</p>				
+			<% end %>
+		</td>
+		<td>
+			<% if classification == "Normal" %>
+				<p class="text-center">
+					<i class="icon-ok"></i>							
+				</p>				
+			<% end %>			
+		</td>
+		<td>
+			<% if classification == "Obesidade leve" || classification == "Obsidade moderada" || classification == "Obsidade moderada" ||  classification == "Obsidade mórbida"    %>
+				<p class="text-center">
+					<i class="icon-ok"></i>							
+				</p>				
+			<% end %>				
+		</td>
+		<td>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<div class="alert alert-success">
+				Massa muscular				
+			</div>
+		</td>
+		<td>
+		</td>
+		<td>
+		</td>
+		<td>
+		</td>
+		<td>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<div class="alert alert-info">
+				Massa de gordura
+			</div>
+		</td>
+		<td>
+			<% if g > 0 %>
+				<p class="text-center">
+					<i class="icon-ok"></i>							
+				</p>				
+			<% end %>
+		</td>
+		<td>
+			<% if g == 0 %>
+				<p class="text-center">
+					<i class="icon-ok"></i>							
+				</p>				
+			<% end %>			
+		</td>
+		<td>
+			<% if g < 0 %>
+				<p class="text-center">
+					<i class="icon-ok"></i>							
+				</p>				
+			<% end %>			
+		</td>
+		<td>
+		</td>
+	</tr>
+</table>
+<h4 class="text-info">Diagnóstico da obesidade</h4>
+<table class="table table-bordered">
+	<tr>
+		<td width="15%"></td>
+		<th>
+			<p class="text-center">
+				Valor
+			</p>
+		</th>
+		<th>
+			<p class="text-center">
+				Variação normal				
+			</p>
+		</th>
+	</tr>
+	<tr>
+		<td>
+			<div class="alert alert-info">
+				IMC				
+			</div>
+		</td>
+		<td>
+			<p class="text-center">
+				<%= imc%>							
+			</p>
+		</td>
+		<td>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<div class="alert alert-info">
+				PGC				
+			</div>
+		</td>
+		<td>
+		</td>
+		<td>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<div class="alert alert-info">
+				RCQ				
+			</div>
+		</td>
+		<td>
+		</td>
+		<td>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<div class="alert alert-info">
+				TMB				
+			</div>
+		</td>
+		<td>
+		</td>
+		<td>
+		</td>
+	</tr>
+	
+</table>
+	
