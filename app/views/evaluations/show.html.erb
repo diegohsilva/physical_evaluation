@@ -20,6 +20,7 @@
 <p>
 	<strong>IMC: </strong> <%= imc =  @evaluation.imc %>
 </p>
+
 <% classification =  @evaluation.classification_imc %>
 
 <% if classification == "Obsidade mórbida" %>
@@ -56,6 +57,12 @@
 		<%= classification %>
 	</p>	
 <% end %>
+<p>
+	<strong>Gordura Corporal: </strong> <%= imc =  @evaluation.gordura %> <strong>%</strong>
+</p>
+<p>
+	<strong>Massa Magra: </strong> <%= imc =  @evaluation.massa_magra %> <strong>%</strong>
+</p>
 <table class='table'>
 	<tr>
 		<td align="center">

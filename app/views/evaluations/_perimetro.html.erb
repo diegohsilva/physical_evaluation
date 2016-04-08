@@ -18,7 +18,7 @@
           <fieldset>
                <div class="row-fluid"> 
                   <div class="span12"> 
-                     <%= f.input :antebraco_direito, input_html: { class: "span3" } %>
+                     <%= f.input :antebraco_direito, as: :string, input_html: { class: "span3 decimal" } %>
                   </div>
                </div>   
           </fieldset>     
@@ -41,7 +41,7 @@
           <fieldset>
                <div class="row-fluid"> 
                   <div class="span12"> 
-                     <%= f.input :braco_relaxado_direito, input_html: { class: "span3" } %>
+                     <%= f.input :braco_relaxado_direito, as: :string, input_html: { class: "span3 decimal" } %>
                   </div>
                </div>   
           </fieldset>     
@@ -50,7 +50,7 @@
           <fieldset>
                <div class="row-fluid"> 
                   <div class="span5"> 
-                     <%= f.input :braco_relaxado_esquerdo, input_html: {class: "span3" } %>
+                     <%= f.input :braco_relaxado_esquerdo, as: :string, input_html: {class: "span3 decimal" } %>
                   </div>
                </div>   
           </fieldset>     
@@ -64,7 +64,7 @@
        <fieldset>
             <div class="row-fluid"> 
                <div class="span12"> 
-                  <%= f.input :braco_contraido_direito, input_html: { class: "span3" } %>
+                  <%= f.input :braco_contraido_direito, as: :string, input_html: { class: "span3 decimal" } %>
                </div>
             </div>   
        </fieldset>     
@@ -73,7 +73,7 @@
        <fieldset>
             <div class="row-fluid"> 
                <div class="span5"> 
-                  <%= f.input :braco_contraiddo_esquerdo, input_html: { class: "span3" } %>
+                  <%= f.input :braco_contraiddo_esquerdo, as: :string, input_html: { class: "span3 decimal" } %>
                </div>
             </div>   
        </fieldset>     
@@ -87,7 +87,7 @@
        <fieldset>
             <div class="row-fluid"> 
                <div class="span12"> 
-                  <%= f.input :coxa_proximal_direito, input_html: { class: "span3" } %>
+                  <%= f.input :coxa_proximal_direito, as: :string, input_html: { class: "span3 decimal" } %>
                </div>
             </div>   
        </fieldset>     
@@ -96,7 +96,7 @@
        <fieldset>
             <div class="row-fluid"> 
                <div class="span5"> 
-                  <%= f.input :coxa_proximal_esquerdo, input_html: { class: "span3" } %>
+                  <%= f.input :coxa_proximal_esquerdo, as: :string, as: :string,as: :string,  input_html: { class: "span3 decimal" } %>
                </div>
             </div>   
        </fieldset>     
@@ -110,7 +110,7 @@
        <fieldset>
             <div class="row-fluid"> 
                <div class="span12"> 
-                  <%= f.input :coxa_medial_direito, input_html: { class: "span3" } %>
+                  <%= f.input :coxa_medial_direito, as: :string,as: :string,  input_html: { class: "span3 decimal" } %>
                </div>
             </div>   
        </fieldset>     
@@ -119,7 +119,7 @@
        <fieldset>
             <div class="row-fluid"> 
                <div class="span5"> 
-                  <%= f.input :coxa_medial_esquerdo, input_html: { class: "span3" } %>
+                  <%= f.input :coxa_medial_esquerdo, as: :string, input_html: { class: "span3 decimal" } %>
                </div>
             </div>   
        </fieldset>     
@@ -133,7 +133,7 @@
        <fieldset>
             <div class="row-fluid"> 
                <div class="span12"> 
-                  <%= f.input :coxa_distal_direito, input_html: { class: "span3" } %>
+                  <%= f.input :coxa_distal_direito, as: :string, as: :string, input_html: { class: "span3 decimal" } %>
                </div>
             </div>   
        </fieldset>     
@@ -142,7 +142,7 @@
        <fieldset>
             <div class="row-fluid"> 
                <div class="span5"> 
-                  <%= f.input :coxa_distal_esquerdo, input_html: { class: "span3" } %>
+                  <%= f.input :coxa_distal_esquerdo, as: :string, input_html: { class: "span3 decimal" } %>
                </div>
             </div>   
        </fieldset>     
@@ -156,7 +156,7 @@
        <fieldset>
             <div class="row-fluid"> 
                <div class="span12"> 
-                  <%= f.input :panturrilha_direito, input_html: { class: "span3" } %>
+                  <%= f.input :panturrilha_direito, as: :string, input_html: { class: "span3 decimal" } %>
                </div>
             </div>   
        </fieldset>     
@@ -165,7 +165,7 @@
        <fieldset>
             <div class="row-fluid"> 
                <div class="span5"> 
-                  <%= f.input :panturrilha_esquerdo, input_html: { class: "span3" } %>
+                  <%= f.input :panturrilha_esquerdo, as: :string,as: :string,  input_html: { class: "span3 decimal" } %>
                </div>
             </div>   
        </fieldset>     
@@ -177,14 +177,14 @@
       <td width="25%">
          <div class="row-fluid"> 
             <div class="span12"> 
-               <%= f.input :abdomen, input_html: { class: "span3" } %>
+               <%= f.input :abdomen, as: :string, input_html: { class: "span3 decimal" } %>
             </div>
          </div>   
       </td>
       <td>
          <div class="row-fluid"> 
             <div class="span5"> 
-               <%= f.input :quadril, input_html: { class: "span3" } %>
+               <%= f.input :quadril, as: :string, input_html: { class: "span3 decimal" } %>
             </div>
          </div>   
       </td>
@@ -193,14 +193,14 @@
       <td>
          <div class="row-fluid"> 
             <div class="span12"> 
-               <%= f.input :cintura, input_html: { class: "span3"  } %>
+               <%= f.input :cintura, as: :string, input_html: { class: "span3 decimal"  } %>
             </div>
          </div>   
       </td>
       <td>
          <div class="row-fluid"> 
             <div class="span5"> 
-               <%= f.input :torax, input_html: { class: "span3" } %>
+               <%= f.input :torax, as: :string, input_html: { class: "span3 decimal" } %>
             </div>
          </div>   
       </td>
@@ -209,14 +209,14 @@
       <td>
          <div class="row-fluid"> 
             <div class="span12"> 
-               <%= f.input :ombro, input_html: { class: "span3" } %>
+               <%= f.input :ombro, as: :string, input_html: { class: "span3 decimal" } %>
             </div>
          </div>   
       </td>
       <td>
          <div class="row-fluid"> 
             <div class="span5"> 
-               <%= f.input :pescoco, input_html: { class: "span3" } %>
+               <%= f.input :pescoco, as: :string, input_html: { class: "span3 decimal" } %>
             </div>
          </div>   
       </td>
@@ -228,14 +228,14 @@
        <td width="25%">
          <div class="row-fluid"> 
             <div class="span12"> 
-               <%= f.input :punho, input_html: { class: "span3" } %>
+               <%= f.input :punho, as: :string, input_html: { class: "span3 decimal" } %>
             </div>
          </div>   
        </td>
        <td>
          <div class="row-fluid"> 
             <div class="span7"> 
-               <%= f.input :umero, input_html: { class: "span2" } %>
+               <%= f.input :umero, as: :string, input_html: { class: "span2 decimal" } %>
             </div>
          </div>   
        </td>
@@ -244,7 +244,7 @@
        <td>
          <div class="row-fluid"> 
             <div class="span12"> 
-               <%= f.input :femur, input_html: { class: "span3" } %>
+               <%= f.input :femur, as: :string, input_html: { class: "span3 decimal" } %>
             </div>
          </div>   
        </td>

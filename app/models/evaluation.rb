@@ -26,7 +26,21 @@ class Evaluation < ActiveRecord::Base
     c = ccorp_altura * ccorp_altura 
       (ccorp_peso / c).round(2)
   end
-  
+  def gordura
+    peso_libra = ccorp_peso * 2.20462262
+    item2 = (peso_libra * 1.082) + 94.42
+    circunferencia_cintura = cintura * 0.393700787
+    massa_magra = item2 - (circunferencia_cintura * 4.15)
+    #gorduracorporal = ((peso_libra - massa_magra) * 100) / peso_libra
+    (((peso_libra - massa_magra) * 100) / peso_libra).round(2)
+  end
+  def massa_magra
+    peso_libra = ccorp_peso * 2.20462262
+    item2 = (peso_libra * 1.082) + 94.42
+    circunferencia_cintura = cintura * 0.393700787
+    massa_magra_percent = item2 - (circunferencia_cintura * 4.15)
+    ((massa_magra_percent * 100)/peso_libra).round(2)
+  end
   def classification_imc
       if student.male?
         if imc > 43
