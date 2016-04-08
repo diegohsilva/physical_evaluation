@@ -1,7 +1,10 @@
-<%= imc =  @evaluation.imc %>				
+<%= @imc =  @evaluation.imc %>				
 <%= classification =  @evaluation.classification_imc %>			
 <%= @evaluation.gordura %>	
 <%= g = @evaluation.classification_coporral_fat[:position] %>	
+<%=  @evaluation.classification_coporral_fat[:text] %>	
+
+
 
 <h4 class="text-info text-center">Resultado da Avaliação</h4>
 <br	>			
@@ -71,15 +74,15 @@
 		<td>
 			<% if classification == "Normal" %>
 				<p class="text-center">
-					<i class="icon-ok"></i>							
-				</p>				
+				 <%= render "modal_peso_n"%>
+	      </p>				
 			<% end %>			
 		</td>
 		<td>
 			<% if classification == "Obesidade leve" || classification == "Obsidade moderada" || classification == "Obsidade moderada" ||  classification == "Obsidade mórbida"    %>
-				<p class="text-center">
-					<i class="icon-ok"></i>							
-				</p>				
+			<p class="text-center">
+			 <%= render "modal_peso_n"%>
+      </p>				
 			<% end %>				
 		</td>
 		<td>
@@ -154,7 +157,7 @@
 		</td>
 		<td>
 			<p class="text-center">
-				<%= imc%>							
+				<%= @imc%>							
 			</p>
 		</td>
 		<td>
