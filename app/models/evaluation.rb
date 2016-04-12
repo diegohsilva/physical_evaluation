@@ -39,6 +39,13 @@ class Evaluation < ActiveRecord::Base
     (((peso_libra - massa_magra) * 100) / peso_libra).round(2)
   end
   
+  def relacao_cintura_quadril
+     q = cintura / quadril
+     q.round(2)
+  end
+  
+
+  
   def classification_coporral_fat
     c = {:position => nil, :text => nil}
 
