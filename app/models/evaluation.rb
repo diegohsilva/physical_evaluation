@@ -148,88 +148,371 @@ class Evaluation < ActiveRecord::Base
   end
 
   def classification_coporral_fat
+    age = student_age[:ano]
+    g = gordura.to_i    
     c = {:position => 0, :text => nil}
 
-     age = student_age[:ano]
-     g = gordura
-
-     if student.male?
-        if (18..25).include?(age)
-  
-          if  (4..6).include?(g)
-           c =  "Excelente"
-          end  
-        
-          if  (8..10).include?(g)
-            c = "Bom"
-          end  
-        
-          if  (12..13).include?(g)
-            c = "Acima da média"
-          end  
-        
-          if  (14..16).include?(g)
-            c = "Média"
-          end  
-        
-          if  (17..20).include?(g)
-            c = "Abaixo da média"
-          end
-        
-          if  (20..24).include?(g)
-            c = "Ruim"
-          end 
-        
-          if  (26..36).include?(g)
-            c = "Muito ruim"
-          end  
+    if student.male?      
+      if (26..35).include?(age)        
+        if g < 8
+           c[:text] = "Excelente"        
+           c[:position] = 1                       
         end
         
-        if (26..35).include?(age)
-            if g < 8
-               c[:text] = "Excelente"        
-               c[:position] = 1                       
-            end 
-              
-            if  (8..11).include?(g) 
-              c = "Excelente"
-            end  
-
-            if  (12..15).include?(g)
-              c[:text] = "Bom"
-              c[:position] = 1
-            end  
-
-            if  (16..18).include?(g)
-              c[:text] = "Acima da média"
-              c[:position] = 1 
-            end  
-
-            if  (18..20).include?(g)
-              c[:text] = "Média"
-              c[:position] = 0
-            end  
-
-            if  (22..24).include?(g)
-              c[:text] = "Abaixo da média"
-              c[:position] = -1
-            end
-
-            if  (20..24).include?(g)
-              c[:text] = "Ruim"
-              c[:position] = -1              
-            end 
-            
-            if  (28..36).include?(g) || g >= 36 
-              c[:text] = "Muito ruim"
-              c[:position] = -1
-              
-            end  
+        if (8..11).include?(g)
+           c[:text] = "Excelente"        
+           c[:position] = 1                       
         end
-      else
-              
+        
+        if (12..15).include?(g)
+           c[:text] = "bom"        
+           c[:position] = 1                       
+        end
+        if (16..18).include?(g)
+           c[:text] = "acima da média"        
+           c[:position] = 1                       
+        end
+        if (18..20).include?(g)
+           c[:text] = "média"        
+           c[:position] = 0
+        end
+        if (22..24).include?(g)
+           c[:text] = "abaixo da média"        
+           c[:position] = -1                       
+        end
+        if (20..24).include?(g)
+           c[:text] = "ruim"        
+           c[:position] = -1                       
+        end
+        if (28..36).include?(g)
+           c[:text] = "muito ruim"        
+           c[:position] = 1                       
+        end        
+      end                
+      
+      if (18..25).include?(age)        
+        if g < 4
+           c[:text] = "Excelente"        
+           c[:position] = 1                       
+        end
+        
+        if (4..6).include?(g)
+           c[:text] = "Excelente"        
+           c[:position] = 1                       
+        end
+        
+        if (8..10).include?(g)
+           c[:text] = "bom"        
+           c[:position] = 1                       
+        end
+        if (12..13).include?(g)
+           c[:text] = "acima da média"        
+           c[:position] = 1                       
+        end
+        if (14..16).include?(g)
+           c[:text] = "média"        
+           c[:position] = 0
+        end
+        if (17..20).include?(g)
+           c[:text] = "abaixo da média"        
+           c[:position] = -1                       
+        end
+        if (20..24).include?(g)
+           c[:text] = "ruim"        
+           c[:position] = -1                       
+        end
+        if (26..36).include?(g)
+           c[:text] = "muito ruim"        
+           c[:position] = 1                       
+        end        
+      end 
+      
+      if (36..45).include?(age)    
+        if g < 10
+           c[:text] = "Excelente"        
+           c[:position] = 1                       
+        end
+        
+        if (10..14).include?(g)
+           c[:text] = "Excelente"        
+           c[:position] = 1                       
+        end
+        
+        if (16..18).include?(g)
+           c[:text] = "bom"        
+           c[:position] = 1                       
+        end
+        if (19..21).include?(g)
+           c[:text] = "acima da média"        
+           c[:position] = 1                       
+        end
+        if (21..23).include?(g)
+           c[:text] = "média"        
+           c[:position] = 0
+        end
+        if (24..25).include?(g)
+           c[:text] = "abaixo da média"        
+           c[:position] = -1                       
+        end
+        if (27..29).include?(g)
+           c[:text] = "ruim"        
+           c[:position] = -1                       
+        end
+        if (30..39).include?(g)
+           c[:text] = "muito ruim"        
+           c[:position] = 1                       
+        end        
+      end  
+      
+      if (46..55).include?(age)    
+        if g < 12
+           c[:text] = "Excelente"        
+           c[:position] = 1                       
+        end
+        
+        if (12..16).include?(g)
+           c[:text] = "Excelente"        
+           c[:position] = 1                       
+        end
+        
+        if (18..20).include?(g)
+           c[:text] = "bom"        
+           c[:position] = 1                       
+        end
+        if (21..23).include?(g)
+           c[:text] = "acima da média"        
+           c[:position] = 1                       
+        end
+        if (24..25).include?(g)
+           c[:text] = "média"        
+           c[:position] = 0
+           
+        end
+        if (26..27).include?(g)
+           c[:text] = "abaixo da média"        
+           c[:position] = -1                       
+        end
+        if (28..30).include?(g)
+           c[:text] = "ruim"        
+           c[:position] = -1                       
+        end
+        if (32..38).include?(g)
+           c[:text] = "muito ruim"        
+           c[:position] = 1                       
+        end        
+      end  
+      
+      if (56..65).include?(age)    
+        if g < 13
+           c[:text] = "Excelente"        
+           c[:position] = 1                       
+        end
+        
+        if (13..18).include?(g)
+           c[:text] = "Excelente"        
+           c[:position] = 1                       
+        end
+        
+        if (20..21).include?(g)
+           c[:text] = "bom"        
+           c[:position] = 1                       
+        end
+        if (22..23).include?(g)
+           c[:text] = "acima da média"        
+           c[:position] = 1                       
+        end
+        if (24..25).include?(g)
+           c[:text] = "média"        
+           c[:position] = 0
+           
+        end
+        if (26..27).include?(g)
+           c[:text] = "abaixo da média"        
+           c[:position] = -1                       
+        end
+        if (28..30).include?(g)
+           c[:text] = "ruim"        
+           c[:position] = -1                       
+        end
+        if (32..38).include?(g)
+           c[:text] = "muito ruim"        
+           c[:position] = 1                       
+        end        
+      end  
+      
+    else              
+      if (18..25).include?(age)    
+        if  g < 13 
+           c[:text] = "excelente"        
+           c[:position] = 1                       
+        end                
+        
+        if (13..16).include?(g)
+           c[:text] = "excelente"        
+           c[:position] = 1                       
+        end        
+        if (17..19).include?(g)
+           c[:text] = "bom"        
+           c[:position] = 1                       
+        end        
+        if (20..22).include?(g)
+           c[:text] = "acima da média"        
+           c[:position] = 1                       
+        end        
+        if (23..25).include?(g)
+           c[:text] = "média"        
+           c[:position] = 0                      
+        end                
+        if (26..31).include?(g)
+           c[:text] = "abaixo da média"        
+           c[:position] = -1                       
+        end        
+        if (29..31).include?(g)
+           c[:text] = "ruim"        
+           c[:position] = -1                       
+        end        
+        if (33..43).include?(g)
+           c[:text] = "muito ruim"        
+           c[:position] = -1                       
+        end                
       end
-
+      if (26..35).include?(age)    
+        if  g < 14 
+           c[:text] = "excelente"        
+           c[:position] = 1                       
+        end                                
+        if (14..16).include?(g)
+           c[:text] = "excelente"        
+           c[:position] = 1                       
+        end                
+        if (18..20).include?(g)
+           c[:text] = "bom"        
+           c[:position] = 1                       
+        end                
+        if (21..23).include?(g)
+           c[:text] = "acima da média"        
+           c[:position] = 1                       
+        end                
+        if (24..25).include?(g)
+           c[:text] = "média"        
+           c[:position] = 0                       
+        end                
+        if (27..29).include?(g)
+           c[:text] = "abaixo da média"        
+           c[:position] = -1                       
+        end                
+        if (31..33).include?(g)
+           c[:text] = "ruim"        
+           c[:position] = -1                       
+        end                
+        if (36..49).include?(g)
+           c[:text] = "muito ruim"        
+           c[:position] = -1                       
+        end                        
+      end
+      if (36..45).include?(age)    
+        if  g < 16 
+           c[:text] = "excelente"        
+           c[:position] = 1                       
+        end                        
+        if (16..19).include?(g)
+           c[:text] = "excelente"        
+           c[:position] = 1                       
+        end                        
+        if (20..23).include?(g)
+           c[:text] = "bom"        
+           c[:position] = 1                       
+        end                        
+        if (24..26).include?(g)
+           c[:text] = "acima da média"        
+           c[:position] = 1                       
+        end                        
+        if (27..29).include?(g)
+           c[:text] = "média"        
+           c[:position] = 0
+        end                        
+        if (30..32).include?(g)
+           c[:text] = "abaixo da média"        
+           c[:position] = -1
+        end                        
+        if (33..36).include?(g)
+           c[:text] = "ruim"        
+           c[:position] = -1                       
+        end                        
+        if (38..48).include?(g)
+           c[:text] = "muito ruim"        
+           c[:position] = -1                       
+        end                                
+      end
+      if (46..55).include?(age)    
+        if  g < 17 
+           c[:text] = "excelente"        
+           c[:position] = 1                       
+        end       
+        if (17..21).include?(g)
+           c[:text] = "excelente"        
+           c[:position] = -1                       
+        end                                
+        if (23..25).include?(g)
+           c[:text] = "bom"        
+           c[:position] = 1                       
+        end                                
+        if (26..28).include?(g)
+           c[:text] = "acima da média"        
+           c[:position] = 1                       
+        end                                
+        if (29..31).include?(g)
+           c[:text] = "média"        
+           c[:position] = 0                       
+        end                                
+        if (32..34).include?(g)
+           c[:text] = "abaixo da média"        
+           c[:position] = -1                       
+        end                                
+        if (35..38).include?(g)
+           c[:text] = "ruim"        
+           c[:position] = -1                       
+        end                                
+        if (39..50).include?(g)
+           c[:text] = "muito ruim"        
+           c[:position] = -1                       
+        end                                        
+      end
+      if (46..55).include?(age)
+        if  g < 18 
+           c[:text] = "excelente"        
+           c[:position] = 1
+        end               
+        if (18..22).include?(g)
+           c[:text] = "excelente"        
+           c[:position] = 1                     
+        end                                                
+        if (24..26).include?(g)
+           c[:text] = "bom"        
+           c[:position] = 1                     
+        end                                                
+        if (27..29).include?(g)
+           c[:text] = "acima da média"        
+           c[:position] = 1                     
+        end
+        if (30..32).include?(g)
+           c[:text] = "média"        
+           c[:position] = 0           
+        end
+        if (33..35).include?(g)
+           c[:text] = "abaixo da média"        
+           c[:position] = -1                     
+        end                                              
+        if (36..38).include?(g)
+           c[:text] = "ruim"
+           c[:position] = -1                   
+        end
+        if (39..49).include?(g)
+           c[:text] = "muito ruim"        
+           c[:position] = -1                     
+        end                                                
+      end
+    end    
       c
   end
   

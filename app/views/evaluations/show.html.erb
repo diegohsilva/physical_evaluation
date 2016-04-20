@@ -1,8 +1,8 @@
 <%= @imc =  @evaluation.imc %>				
 <%= classification =  @evaluation.classification_imc %>			
-<%= @evaluation.gordura %>	
-<%= g = @evaluation.classification_coporral_fat[:position] %>	
-<%=  @evaluation.classification_coporral_fat[:text] %>	
+<%= @gg = @evaluation.gordura.to_i %>	
+\<%= @g = @evaluation.classification_coporral_fat[:position] %>	
+<%= @gt = @evaluation.classification_coporral_fat[:text] %>	
 
 
 
@@ -104,23 +104,23 @@
 			</div>
 		</td>
 		<td>
-			<% if g > 0 %>
+			<% if @g > 0 %>
 				<p class="text-center">
-					<i class="icon-ok"></i>							
+					<%=render "modal_gordura"%>				 					
 				</p>				
 			<% end %>
 		</td>
 		<td>
-			<% if g == 0 %>
+			<% if @g == 0 %>
 				<p class="text-center">
-					<i class="icon-ok"></i>							
+					<%= render "modal_gordura"%>				 					
 				</p>				
 			<% end %>			
 		</td>
 		<td>
-			<% if g < 0 %>
+			<% if @g < 0 %>
 				<p class="text-center">
-					<i class="icon-ok"></i>							
+					<%= render "modal_gordura"%>				 
 				</p>				
 			<% end %>			
 		</td>
