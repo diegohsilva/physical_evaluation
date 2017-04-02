@@ -14,11 +14,18 @@ class TrainingsController < ApplicationController
 
   def new
     @training = Training.new
+    @training.date_start = Date.current.strftime("%d/%m/%Y")    
+    @training.date_end = Date.current + 6.month    
+    @training.date_end = @training.date_end.strftime("%d/%m/%Y") 
+    
+    
     respond_with(@training)
   end
 
   def edit
     @training.student_name = @training.student
+    @training.coach_name = @training.coach
+    
     @training.date_start = @training.date_start.strftime("%d/%m/%Y") unless @training.date_start.nil?
     @training.date_end = @training.date_end.strftime("%d/%m/%Y") unless @training.date_end.nil?
   end
@@ -42,9 +49,10 @@ class TrainingsController < ApplicationController
   private
     def set_training
       @training = Training.find(params[:id])
+      
     end
 
     def training_params
-      params.require(:training).permit(:student_id, :name, :date_start, :date_end, :student_name, :break_time, :description, :week_day, exercise_trainings_attributes: [:id, :exercise_id, :repetitions,:series, :effort, :_destroy])
+      params.require(:training).permit(:coach_id, :coach_name, :student_id, :name, :date_start, :date_end, :student_name, :description, :segunda, :terca, :quarta, :quinta, :sexta, :sabado, :domingo, exercise_trainings_attributes: [:id, :exercise_id, :repetitions,:series, :effort, :descanso, :_destroy])
     end
 end

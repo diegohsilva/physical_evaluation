@@ -11,18 +11,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160407163711) do
+ActiveRecord::Schema.define(version: 20170402004149) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "coaches", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "cpf"
+    t.string   "phone"
+    t.string   "celphone"
+    t.string   "cref"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "companies", force: :cascade do |t|
+    t.string   "name"
+    t.string   "address"
+    t.string   "email"
+    t.string   "phone"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "evaluations", force: :cascade do |t|
     t.integer  "student_id"
     t.integer  "evaluator_id"
     t.date     "evaluation_date"
     t.date     "end_date"
-    t.datetime "created_at",                            null: false
-    t.datetime "updated_at",                            null: false
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
     t.boolean  "amn_aumentomassa"
     t.boolean  "amn_melhoraaerobico"
     t.boolean  "amn_saude"
@@ -30,18 +50,18 @@ ActiveRecord::Schema.define(version: 20160407163711) do
     t.boolean  "amn_condicionamento"
     t.boolean  "amn_perdapeso"
     t.boolean  "amn_praticaatividade"
-    t.string   "amn_atividade",             limit: 30
+    t.string   "amn_atividade",              limit: 30
     t.integer  "amn_frequencia"
     t.boolean  "amn_dordorsal"
     t.boolean  "amn_dorlombar"
     t.boolean  "amn_dorcervical"
     t.boolean  "amn_limitacao"
-    t.string   "amn_dor",                   limit: 40
-    t.string   "amn_cirurgia",              limit: 50
-    t.string   "amn_medicamento",           limit: 50
-    t.string   "amn_problemasaude",         limit: 30
+    t.string   "amn_dor",                    limit: 40
+    t.string   "amn_cirurgia",               limit: 50
+    t.string   "amn_medicamento",            limit: 50
+    t.string   "amn_problemasaude",          limit: 30
     t.string   "amn_frequenciarepouso"
-    t.string   "amn_pressaorepouso",        limit: 10
+    t.string   "amn_pressaorepouso",         limit: 10
     t.boolean  "amn_problemacardiado"
     t.boolean  "amn_dorpeito"
     t.boolean  "amn_dorpeitoultimomes"
@@ -49,7 +69,7 @@ ActiveRecord::Schema.define(version: 20160407163711) do
     t.boolean  "amn_problemaosseo"
     t.boolean  "amn_medicamentopressao"
     t.boolean  "amn_impedimento"
-    t.string   "amn_observacoes",           limit: 300
+    t.string   "amn_observacoes",            limit: 300
     t.boolean  "ccorp_jackson7"
     t.boolean  "ccorp_jackson3"
     t.boolean  "ccorp_bioimpedancia"
@@ -127,8 +147,14 @@ ActiveRecord::Schema.define(version: 20160407163711) do
     t.integer  "ombros_assimetricos"
     t.integer  "assimetria_quadril"
     t.string   "observacoes"
+    t.string   "info_cirugia"
+    t.string   "data_cirugia"
+    t.boolean  "cirugia"
+    t.boolean  "jackson_e_pollock_5_dobras"
+    t.integer  "company_id"
   end
 
+  add_index "evaluations", ["company_id"], name: "index_evaluations_on_company_id", using: :btree
   add_index "evaluations", ["evaluator_id"], name: "index_evaluations_on_evaluator_id", using: :btree
   add_index "evaluations", ["student_id"], name: "index_evaluations_on_student_id", using: :btree
 
@@ -139,6 +165,7 @@ ActiveRecord::Schema.define(version: 20160407163711) do
     t.string   "phone"
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
+    t.string   "crefito"
   end
 
   create_table "exercise_trainings", force: :cascade do |t|
@@ -149,16 +176,20 @@ ActiveRecord::Schema.define(version: 20160407163711) do
     t.integer  "repetitions"
     t.integer  "effort"
     t.integer  "series"
+    t.string   "descanso"
   end
 
   add_index "exercise_trainings", ["exercise_id"], name: "index_exercise_trainings_on_exercise_id", using: :btree
   add_index "exercise_trainings", ["training_id"], name: "index_exercise_trainings_on_training_id", using: :btree
 
   create_table "exercises", force: :cascade do |t|
-    t.string   "name",        limit: 60
+    t.string   "name",           limit: 60
     t.text     "description"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.string   "chave_video"
+    t.string   "grupo_muscular"
+    t.string   "musculo"
   end
 
   create_table "students", force: :cascade do |t|
@@ -188,8 +219,17 @@ ActiveRecord::Schema.define(version: 20160407163711) do
     t.datetime "updated_at",  null: false
     t.integer  "week_day"
     t.string   "break_time"
+    t.boolean  "segunda"
+    t.boolean  "terca"
+    t.boolean  "quarta"
+    t.boolean  "quinta"
+    t.boolean  "sexta"
+    t.boolean  "sabado"
+    t.boolean  "domingo"
+    t.integer  "coach_id"
   end
 
+  add_index "trainings", ["coach_id"], name: "index_trainings_on_coach_id", using: :btree
   add_index "trainings", ["student_id"], name: "index_trainings_on_student_id", using: :btree
 
   create_table "users", force: :cascade do |t|
@@ -212,11 +252,12 @@ ActiveRecord::Schema.define(version: 20160407163711) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "evaluations", "companies"
   add_foreign_key "evaluations", "evaluators"
   add_foreign_key "evaluations", "students"
   add_foreign_key "exercise_trainings", "exercises"
   add_foreign_key "exercise_trainings", "trainings"
+  add_foreign_key "trainings", "coaches"
   add_foreign_key "trainings", "students"
-  add_foreign_key "users", "evaluators", name: "users_evaluator_id_fk"
   add_foreign_key "users", "students", name: "users_student_id_fk"
 end

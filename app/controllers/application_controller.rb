@@ -13,8 +13,15 @@ class ApplicationController < ActionController::Base
   
   layout :define_layout
 
+  
 	private
-	
+  
+  helper_method :current_company	
+  
+  def current_company
+    Company.first
+  end
+  
 	def message
 		@message ||= {}
 	end

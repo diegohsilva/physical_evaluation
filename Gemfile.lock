@@ -211,5 +211,8 @@ DEPENDENCIES
   uglifier (>= 1.3.0)
   validates_timeliness
 
+RUBY VERSION
+   ruby 2.1.8p440
+
 BUNDLED WITH
-   1.11.2
+   1.14.6

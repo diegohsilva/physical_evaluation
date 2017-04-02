@@ -1,0 +1,4 @@
+<ul class="nav nav-pills">
+	<li role="presentation" class="<% if  params[:controller] == "dashboard"%>active<%end%>"><a href="<%= root_path %>"><h4 title="Home"><i class="icon-home"></i></h4></a></li>
+	<li role="presentation"  class="<% if  params[:controller] == "evaluations"%>active<%end%>"><a href="<%= evaluations_path%>"><h4 title="Avaliação"><i class="icon-list-alt"></i></h4></a></li>
+</ul>

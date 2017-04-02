@@ -5,6 +5,22 @@
 	<div class="row-fluid">
 		<div class="span10"><%= f.input :description,  input_html:{ rows:10, cols:50 , class:'span10'} %></div>
 	</div>
+	<div class="row-fluid">
+		<div class="span6">
+			<%= f.input :grupo_muscular, input_html: { class: 'span12' } %>
+		</div>
+		<div class="span6">
+			<%= f.input :musculo, input_html: { class: 'span12' } %>
+		</div>
+	</div>
+	<div class="row-fluid">
+		<div class="span9"><%= f.input :chave_video, input_html: { class: 'span9' } %>
+		</div>
+	</div>
+	<i>*a chave do youtube do video que deseja mostrar</i>
+	
+	
+	
 	<div class="form-actions">
 		<%= f.button :submit, class: 'btn btn-success' %>
 		<%= link_to 'Voltar', exercises_path, class: 'btn' %>

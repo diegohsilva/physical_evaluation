@@ -1,0 +1,15 @@
+pt-BR:
+  title:
+  activerecord:
+    models:
+      coach:
+        one: "Personal"
+        many: "Personais"
+    attributes:
+      coach:
+        name: "Nome"
+        email: 'Email'
+        phone: 'Telefone'
+        celphone: 'Celular'        
+        cpf: 'CPF'
+        cref: 'CREF'

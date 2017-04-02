@@ -25,7 +25,7 @@ pt-BR:
         amn_dorcervical: 'Cervical' 
         amn_limitacao: 'Apresenta limitações ou dor articular? '        
         amn_dor: 'Qual?'    
-        amn_cirurgia: 'Alguma cirurgia recente? Qual/Data?'         
+        cirurgia: 'Alguma cirurgia recente? Qual/Data?'         
         amn_medicamento: 'Algum medicamento? Qual?'
         amn_problemasaude: 'Apresenta algum problema de saúde? Qual?'
         amn_frequenciarepouso: 'Frequencia cardíaca em repouso'
@@ -40,6 +40,7 @@ pt-BR:
         amn_observacoes: 'Observações'
         ccorp_jackson7: 'Jackson & Pollock (7 dobras)'
         ccorp_jackson3: 'Jackson & Pollock (3 dobras)'
+        jackson_e_pollock_5_dobras: 'Jackson & Pollock (5 dobras)'        
         ccorp_guedes: 'Guedes (3 dobras)'
         ccorp_bioimpedancia: 'Bioimpedância'
         ccorp_peso: 'Peso kg:'
@@ -53,20 +54,20 @@ pt-BR:
         ccorp_supraIliaca: 'Supra-ilíaca'
         ccorp_axilarmedia: 'Axilar-média'
         front_photo: 'Foto de Frente'
-        antebraco_direito: ' '        
-        antebraco_esquerdo: ' '       
-        braco_relaxado_direito: ' '    
-        braco_relaxado_esquerdo: ' '   
-        braco_contraido_direito: ' '  
-        braco_contraiddo_esquerdo: ' ' 
-        coxa_proximal_direito:  ' '   
-        coxa_proximal_esquerdo: ' '   
-        coxa_medial_direito:   ' '    
-        coxa_medial_esquerdo: ' '      
-        coxa_distal_direito: ' '      
-        coxa_distal_esquerdo: ' '      
-        panturrilha_direito: ' '      
-        panturrilha_esquerdo: ' '      
+        antebraco_direito: 'Antebraço'        
+        antebraco_esquerdo: 'Antebraço'       
+        braco_relaxado_direito: 'Braço Relaxado'    
+        braco_relaxado_esquerdo: 'Braço Relaxado'   
+        braco_contraido_direito: 'Braço Contraído'  
+        braco_contraiddo_esquerdo: 'Braço Contraído' 
+        coxa_proximal_direito:  'Proximal'   
+        coxa_proximal_esquerdo: 'Proximal'   
+        coxa_medial_direito:   'Coxa medial'    
+        coxa_medial_esquerdo: 'Coxa Medial'      
+        coxa_distal_direito: 'Coxa Distal'      
+        coxa_distal_esquerdo: 'Coxa Distal'      
+        panturrilha_direito: 'Panturrilha'      
+        panturrilha_esquerdo: 'Panturillha'      
         abdomen: 'Abdômen'                  
         quadril: 'Quadril'                  
         cintura: 'Cintura'                  
@@ -75,4 +76,24 @@ pt-BR:
         pescoco: 'Pescoço'                   
         punho:   'Punho'                  
         umero:   'Úmero'                  
-        femur:   'Fêmur'                 
+        femur:   'Fêmur'
+        info_cirugia: "Cirugia"
+        data_cirugia: "Data Cirurgia"
+        anterversao_de_quadril: "Anterversão de Quadril"
+        retroversao_de_quadril: "Retroversão de Quadril"
+        rotacao_interna_ombros: "Rotação Interna Ombros"
+        hipercifose_toracica: "Hipercifose Torácica"
+        retificacao_cervical: "Retificação Cervical"
+        pe_plano: "Pé Plano"
+        retificacao_lombar: "Retificação Lombar"
+        pe_cavo: "Pé Cavo"
+        protusao_abdominal: "Protusão abdominal"
+        pe_calcaneo: "Pé Calcâneo"
+        pe_equino: "Pé Equino"
+        retracao_escapular: "Retração Escapular"
+        pe_vago: "Pé Vago"
+        escoliose_toracica: "Escoliose Torácica"
+        protacao_escapular: "Protação Escapular"
+        depressao_escapular: "Depressão Escapular"
+        pe_aduto: "Pé Aduto"
+        pe_abduto: "Pé Abduto"

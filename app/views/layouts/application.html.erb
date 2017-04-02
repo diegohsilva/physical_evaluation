@@ -9,8 +9,14 @@
 		<% if current_user.student? %>
 			<%= render 'layouts/menu_student'%>
 		<% else %>
-			<%= render 'layouts/menu'%>		
+			<% if current_user.evaluator? %>
+				<%= render 'layouts/menu_evaluator'%>			
+			<% else %>
+				<%= render 'layouts/menu'%>		
+			<% end %>
 		<% end %>
+		
+		
 		<%= render 'layouts/messages' %>
 		<div class="container-fluid">
 			<div class="span12" id="content">

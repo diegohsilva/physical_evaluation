@@ -1,3 +1,6 @@
+<%= link_to edit_training_path(@training), role: 'button' do %>
+  <h5 title="Editar"><i class="icon-pencil"></i></h5>
+<% end %>
 
 <p>
   <strong>Aluno:</strong>
@@ -41,6 +44,9 @@
 			<th width= "5%">
 				Esforço
 			</th>
+			<th width= "5%">
+				Descanso
+			</th>			
 		</tr>
 		<% @training.exercise_trainings.each do |t| %>
     	<tr>
@@ -56,6 +62,9 @@
 				<td>
 					<%= t.effort%>
 				</td>
+				<td>
+					<%= t.descanso%>
+				</td>				
 			</tr>
     <% end %>
 	</table>

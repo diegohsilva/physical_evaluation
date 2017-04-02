@@ -1,35 +1,95 @@
-﻿<% if  @evaluations.any? %>
-	<div class="container-fluid" id="messages-content">
-		<div class="row-fluid">
-			<div class="alert alert-info">
-				<i class="icon-info"></i>
-				<table class="table">
-					<tr>
-						<td>
-							<strong>Há <%= @evaluations.count%> avaliação(ões) vencendo daqui 7 dias.</strong>
-						</td>
-						<td width="1%">
-							<%= link_to evaluations_path(expired: true), role: 'button' do %>
-								<i class="icon-eye-open"></i>
-							<% end %>
-						</td>
-					</tr>
-				</table>
-			</div>
-		</div>
-	</div>
-<% end %>
-<% if @trainings.any? %>
-<div class="container-fluid" id="messages-content">
-	<div class="row-fluid">
-		<div class="alert alert-success">
-			<i class="icon-calendar"></i>
-				<strong> Olá <%= current_user.student.name %> seu treino para hoje é</strong><br>
-				<% @trainings.each do |t| %>
-					<%= link_to "#{t.name}", t %>
+﻿<% unless current_user.student?%>
+	<div class="row-fluid"> 
+		<div class="span6">
+			<h4 class="text-warning">Avaliações há vencer</h4>	
+			<table class="table table-bordered">
+				<%@evaluations.each do |e| %>
+				<tr>
+					<td width="2%">
+						<i class="icon-calendar"></i>				
+					</td>
+					<td>				
+						<%=l e.end_date %> - <%= link_to "#{e.student}", e %>
+					</td>
+					<td width="2%" title="Enviar email">
+						 <%= link_to send_email_evaluation_path(e), role: 'button' do %>
+							<i class="icon-envelope"></i>
+	          <% end %>	          
+					</td>			
+				</tr>
 				<% end %>
+			</table>
 		</div>
+		<div class="span6">
+			<h4 class="text-error">Avaliações vencida</h4>	
+			<table class="table table-bordered">
+				<%@evaluations_by_expired.each do |e| %>
+				<tr>
+					<td width="2%">
+						<i class="icon-calendar"></i>				
+					</td>
+					<td>				
+						<%=l e.end_date %> - <%= e.student %>
+					</td>				
+				</tr>
+				<% end %>
+			</table>
+		<div>		
 	</div>
-</div>
-
 <% end %>
+<% if current_user.student? %>
+<div class="container-fluid">	
+	<div class="span8">
+		<table class="table table-bordered">
+			<th width= "30%">
+					<h4 title="Treino" class="text-error text-center"><i class="icon-fire"></i></h4>
+				</th>
+				<th width= "5%">
+					Carga
+				</th>				
+				<th width= "5%">
+					Nº Repetições
+				</th>				
+				<th width= "5%">
+					Series
+				</th>						
+				<th width= "5%">
+					Descanso
+				</th>
+				<th width= "10%">
+					Como fazer
+				</th>								
+			</tr>
+			
+			<%@trainings.each do |t|%>				
+				<%t.exercise_trainings.each do |e|%>
+					<% if t.wdays.include?(@week_day_current)%>
+						<tr>
+							<td>
+								<%= e %>
+							</td>
+							<td>
+								<%= e.effort %>	Kg						
+							</td>
+							<td>
+								<%= e.repetitions %>																							
+							</td>
+							<td>
+								<%= e.series %>															
+							</td>
+							<td>
+								<%= e.descanso %>							
+							</td>
+							<td>
+								<%= link_to e, role: 'button' do %>
+								  <h5 title="play"><i class="icon-play"></i></h5>
+								<% end %>
+							</td>
+						</tr>
+					<% end %>
+				<% end %>
+			<% end %>
+		</table>
+	</div>		
+</div>
+<%end%>

@@ -12,4 +12,9 @@ class User < ActiveRecord::Base
   def student?
     student.present?
   end
+  
+  def evaluator?
+    evaluator.present?
+  end
+  
 end

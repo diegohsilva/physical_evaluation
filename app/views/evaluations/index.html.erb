@@ -6,18 +6,20 @@
     <% end %>    
   </td>
 </table>
-<table class="table">
+<%= label_tag 'txtBusca', 'Pesquisar' %>
+<%= text_field_tag 'txtBusca', '', :class => 'span14 input-search', :id => 'txtBusca',:placeholder => "Buscar nesta lista", :alt =>"list_evaluations" %>
+<table class="table list_evaluations">
   <thead>
     <tr>
-      <th width= "5%">Data Avaliação</th>
-			<th width= "5%">Data Vencimento</th>
+      <th width= "10%">Data Avaliação</th>
+			<th width= "15%">Data Vencimento</th>
 			<th>Aluno</th>      
       <th>Avaliador</th>
       <th colspan="3" width="5%"></th>
     </tr>
   </thead>
 <tbody>
-    <% @evaluations.each do |evaluation| %>
+    <% @evaluations.sorted.each do |evaluation| %>
       <tr>
         <td><%= l evaluation.evaluation_date %></td>
         <td><%= l evaluation.end_date %></td>      

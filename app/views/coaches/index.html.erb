@@ -1,0 +1,48 @@
+<table class="table">
+  <td><h3>Listagem de Personais</h3></td>
+  <td width='5%'>
+    <%= link_to new_coach_path, role: 'button' do %>
+      <h2 class="text-success" title='Novo Avaliador'><i class="icon-plus"></i></h2>
+    <% end %>    
+  </td>
+</table>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Email</th>
+      <th>CPF</th>
+      <th>Telefone</th>
+      <th>Celular</th>
+      <th colspan="3" width="5%"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @coaches.each do |coach| %>
+      <tr>
+        <td><%= coach.name %></td>
+        <td><%= coach.email %></td>
+        <td><%= coach.cpf %></td>
+        <td><%= coach.phone %></td>
+        <td><%= coach.celphone %></td>
+        <td>
+          <%= link_to edit_coach_path(coach), role: 'button' do %>
+            <h5 title="Editar"><i class="icon-pencil"></i></h5>
+          <% end %>
+        </td>
+        <td>
+          <%= link_to coach, method: :delete, data:{confirm: 'Confirma exclusão ?'}, role: 'button' do %>
+            <h5 title="Apagar"><i class="icon-trash"></i></h5>
+          <% end %>              
+        </td>
+        <td>
+          <%= link_to coach, role: 'button' do %>
+            <h5 title="Informações"><i class="icon-info"></i></h5>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

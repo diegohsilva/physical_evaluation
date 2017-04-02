@@ -359,3 +359,7 @@ table th span.line{
   border-left: 1px solid #dee3ea;
   height: 10px;
 }
+.help-block{
+	color:#FF6666;
+	font-weight: bold;  
+}

@@ -1,18 +1,24 @@
 <div class="navbar">
-  <div class="navbar-inner">
+  <div class="navbar-inner ">
     <div class="container-fluid">
-      <%= image_tag '/images/logo.png', :width =>30, :class  => 'brand'%>    
-         <% if user_signed_in? %>
-     		   <div class="nav-collapse collapse">
-     		   	<ul class="nav pull-right">
-              <li>
-	              <%= link_to destroy_user_session_path, :data => { :confirm => 'Deseja realmenta fazer logoff' }, :method => :delete, :tabindex => "-1" do %>
-	               <h4 title="Logoff"> <i class="icon-off"></i></h4>
-	              <% end %>
-              </li>
-	            </ul>
-     		   </div>
-     		 <%end%>
+		<table width= 100%>
+			<tr>
+				<td width= 5%>
+					<%= image_tag '/images/logo.png', :width =>30, :class  => 'brand'%>    	      					
+				</td>
+				<td width=80%>
+					<h5><%= current_company.name %></h5>				  
+				</td>
+				<td width=50%>
+					<%= link_to "#{current_user.email}", edit_user_registration_path(current_user) %>					
+				</td>
+				<td width=2%>
+						    <%= link_to destroy_user_session_path, :data => { :confirm => 'Deseja realmenta fazer logoff' }, :method => :delete, :tabindex => "-1" do %>
+						     <h4 title="Logoff"> <i class="icon-off"></i></h4>
+						    <% end %>					
+				</td>				
+			</tr>
+		</table>
     </div>
 	</div>
 </div>

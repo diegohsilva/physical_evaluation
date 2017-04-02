@@ -9,3 +9,5 @@ pt-BR:
       exercise:
         name: "Nome"
         description: 'Descrição'
+        musculo: "Músculo"
+        grupo_muscular: "Grupo Muscular"

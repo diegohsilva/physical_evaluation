@@ -3,18 +3,21 @@
 		<table class="table">
 			<tr>
 				<td>
-					<%= f.input :exercise_id, collection: Exercise.all,  label: 'Exercicio', input_html: {class: 'span8'} %>		  
+					<%= f.input :exercise_id, collection: Exercise.sorted.map{|e|[e.to_string, e.id]},label: 'Exercício', input_html: {class: 'span12'}%>
 				</td>
-				<td>
+				<td><br>
 					<%= f.input :series, as: :string, label:'Series', input_html: {class: 'span3'}%> 						
 				</td>
-				<td>
+				<td><br>
 					<%= f.input :repetitions, as: :string, label:'N° Repetições', input_html: {class: 'span3'}%>				 
 				</td>
-				<td>
-					<%= f.input :effort, label:'Carga', input_html: {class: 'span3'}%>			
+				<td><br>
+					<%= f.input :effort, as: :string, label:'Carga', input_html: {class: 'span3'}%>			
 				</td>
-				<td>
+				<td><br>
+					<%= f.input :descanso, as: :string, label:'Descanso', input_html: {class: 'span5 time'}%>			
+				</td>				
+				<td><br>
 					   <%= link_to_remove_association "", f, :class => "icon-trash" %>
 				</td>
 			</tr>

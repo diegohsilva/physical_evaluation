@@ -3,9 +3,11 @@ class DashboardController < ApplicationController
 	  @trainings = []
 		@evaluations = []
 		if current_user.student?
-	    @trainings = Training.by_week_day(Date.current.wday)
+		  @week_day_current = Date.current.wday
+	    @trainings = current_user.student.trainings
 		else
-		  @evaluations =  Evaluation.by_expired(Date.current + 7.day)  		
+		  @evaluations =  Evaluation.are_due(Date.current + 7.day)  		
+		  @evaluations_by_expired =  Evaluation.by_expired(Date.current)  				  
 		end  
 	end
 end

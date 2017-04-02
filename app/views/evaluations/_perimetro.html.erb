@@ -1,177 +1,103 @@
-<table  class="table table-bordered" width="65%"> 
-   <tr>
-      <td width="15%">
-      </td>
-      <td width="25%">
-         <strong> Direito</strong>
-      </td>
-      <td >
-          <strong> Esquerdo</strong>
-          
-      </td>
-   </tr>
-   <tr>
-      <td>
-         <strong>Antebraço:</strong>
-      </td>
-      <td>
-          <fieldset>
-               <div class="row-fluid"> 
-                  <div class="span12"> 
-                     <%= f.input :antebraco_direito, as: :string, input_html: { class: "span3" } %>
-                  </div>
-               </div>   
-          </fieldset>     
-      </td>
-      <td>
-          <fieldset>
-               <div class="row-fluid"> 
-                  <div class="span5"> 
-                     <%= f.input :antebraco_esquerdo,  as: :string, input_html: { class: "span5 decimal" } %>
-                  </div>
-               </div>   
-          </fieldset>     
-      </td>
-   </tr>
-   <tr>
-      <td>
-          <Strong>Braço Relaxado:</strong>
-      </td>
-      <td>
-          <fieldset>
-               <div class="row-fluid"> 
-                  <div class="span12"> 
-                     <%= f.input :braco_relaxado_direito, as: :string, input_html: { class: "span3" } %>
-                  </div>
-               </div>   
-          </fieldset>     
-      </td>
-      <td>
-          <fieldset>
-               <div class="row-fluid"> 
-                  <div class="span5"> 
-                     <%= f.input :braco_relaxado_esquerdo, as: :string, input_html: {class: "span3" } %>
-                  </div>
-               </div>   
-          </fieldset>     
-      </td>
-   </tr>
-<tr>
-   <td>
-      <strong> Braço Contraído:</strong>
-   </td>
-   <td>
-       <fieldset>
-            <div class="row-fluid"> 
-               <div class="span12"> 
-                  <%= f.input :braco_contraido_direito, as: :string, input_html: { class: "span3" } %>
-               </div>
-            </div>   
-       </fieldset>     
-   </td>
-   <td>
-       <fieldset>
-            <div class="row-fluid"> 
-               <div class="span5"> 
-                  <%= f.input :braco_contraiddo_esquerdo, as: :string, input_html: { class: "span3" } %>
-               </div>
-            </div>   
-       </fieldset>     
-   </td>
-</tr>
-<tr>
-   <td>
-      <strong> Coxa Proximal:</strong>
-   </td>
-   <td>
-       <fieldset>
-            <div class="row-fluid"> 
-               <div class="span12"> 
-                  <%= f.input :coxa_proximal_direito, as: :string, input_html: { class: "span3" } %>
-               </div>
-            </div>   
-       </fieldset>     
-   </td>
-   <td>
-       <fieldset>
-            <div class="row-fluid"> 
-               <div class="span5"> 
-                  <%= f.input :coxa_proximal_esquerdo, as: :string, as: :string,as: :string,  input_html: { class: "span3" } %>
-               </div>
-            </div>   
-       </fieldset>     
-   </td>
-</tr>
-<tr>
-   <td>
-      <strong> Coxa Medial:</strong>
-   </td>
-   <td>
-       <fieldset>
-            <div class="row-fluid"> 
-               <div class="span12"> 
-                  <%= f.input :coxa_medial_direito, as: :string,as: :string,  input_html: { class: "span3" } %>
-               </div>
-            </div>   
-       </fieldset>     
-   </td>
-   <td>
-       <fieldset>
-            <div class="row-fluid"> 
-               <div class="span5"> 
-                  <%= f.input :coxa_medial_esquerdo, as: :string, input_html: { class: "span3" } %>
-               </div>
-            </div>   
-       </fieldset>     
-   </td>
-</tr>
-<tr>
-   <td>
-      <strong> Coxa Distal:</strong>
-   </td>
-   <td>
-       <fieldset>
-            <div class="row-fluid"> 
-               <div class="span12"> 
-                  <%= f.input :coxa_distal_direito, as: :string, as: :string, input_html: { class: "span3" } %>
-               </div>
-            </div>   
-       </fieldset>     
-   </td>
-   <td>
-       <fieldset>
-            <div class="row-fluid"> 
-               <div class="span5"> 
-                  <%= f.input :coxa_distal_esquerdo, as: :string, input_html: { class: "span3" } %>
-               </div>
-            </div>   
-       </fieldset>     
-   </td>
-</tr>
-<tr>
-   <td>
-      <strong> Coxa Panturrilha:</strong>
-   </td>
-   <td>
-       <fieldset>
-            <div class="row-fluid"> 
-               <div class="span12"> 
-                  <%= f.input :panturrilha_direito, as: :string, input_html: { class: "span3" } %>
-               </div>
-            </div>   
-       </fieldset>     
-   </td>
-   <td>
-       <fieldset>
-            <div class="row-fluid"> 
-               <div class="span5"> 
-                  <%= f.input :panturrilha_esquerdo, as: :string,as: :string,  input_html: { class: "span3" } %>
-               </div>
-            </div>   
-       </fieldset>     
-   </td>
-</tr>
+<i>*valores deve ser informando em centímetros.</i>
+<table  class="table table-bordered"> 
+	<tr>
+     <th width="50%">
+			Esquerdo
+     </th>
+     <th>
+			Direito
+     </th>
+  </tr>
+	<tr>
+		<td>
+			<div class="span12"> 
+         <%= f.input :antebraco_esquerdo, as: :string, input_html: { class: "span3" } %>
+			</div>      
+		</td>
+			<td>
+				<div class="span12"> 
+	         <%= f.input :antebraco_direito, as: :string, input_html: { class: "span3" } %>
+	      </div>      
+			</td>			
+	</tr>
+	<tr>
+		<td>
+			<div class="span12"> 
+         <%= f.input :braco_relaxado_esquerdo, as: :string, input_html: { class: "span3" } %>
+      </div>      
+		</td>
+			<td>
+				<div class="span12"> 
+	         <%= f.input :braco_relaxado_direito, as: :string, input_html: { class: "span3" } %>
+	      </div>      
+			</td>			
+	</tr>
+	<tr>
+		<td>
+			<div class="span12"> 
+         <%= f.input :braco_contraiddo_esquerdo, as: :string, input_html: { class: "span3" } %>
+      </div>      
+		</td>
+			<td>
+				<div class="span12"> 
+	         <%= f.input :braco_contraido_direito, as: :string, input_html: { class: "span3" } %>
+	      </div>      
+			</td>			
+	</tr>		
+	<tr>
+		<td>
+			<div class="span12"> 
+         <%= f.input :coxa_proximal_esquerdo, as: :string, input_html: { class: "span3" } %>
+      </div>      
+		</td>
+			<td>
+				<div class="span12"> 
+	         <%= f.input :coxa_proximal_direito, as: :string, input_html: { class: "span3" } %>
+	      </div>      
+			</td>			
+	</tr>		
+	<tr>
+		<td>
+			<div class="span12"> 
+         <%= f.input :coxa_medial_esquerdo, as: :string, input_html: { class: "span3" } %>
+      </div>      
+		</td>
+			<td>
+				<div class="span12"> 
+	         <%= f.input :coxa_medial_direito, as: :string, input_html: { class: "span3" } %>
+	      </div>      
+			</td>			
+	</tr>		
+	<tr>
+		<td>
+			<div class="span12"> 
+         <%= f.input :coxa_distal_esquerdo, as: :string, input_html: { class: "span3" } %>
+      </div>      
+		</td>
+			<td>
+				<div class="span12"> 
+	         <%= f.input :coxa_distal_direito, as: :string, input_html: { class: "span3" } %>
+	      </div>      
+			</td>			
+	</tr>		
+	<tr>
+		<td>
+			<div class="span12"> 
+         <%= f.input :panturrilha_esquerdo, as: :string, input_html: { class: "span3" } %>
+      </div>      
+		</td>
+			<td>
+				<div class="span12"> 
+	         <%= f.input :panturrilha_direito, as: :string, input_html: { class: "span3" } %>
+	      </div>      
+			</td>			
+	</tr>		
+	
 </table>
+
+
+
+
 <table  class="table table-bordered"> 
    <tr>
       <td width="25%">

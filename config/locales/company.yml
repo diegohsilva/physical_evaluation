@@ -1,0 +1,11 @@
+pt-BR:
+  title:
+  activerecord:
+    models:
+      company:
+        one: "Paramêtro"
+        many: "Paramêtros"
+    attributes:
+      company:
+        name: "Nome"
+        email: 'Email'

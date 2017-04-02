@@ -20,7 +20,7 @@
   <% @trainings.each do |t| %>
     <tr>
       <td><%= l t.date_start unless t.date_start.nil? %></td>
-			<td> <%= t.week_day_humanize %></td>
+			<td> <%= t.string_week_day %></td>
       
       <td><%= t.student %></td>
       <td><%= t.name%></td>

@@ -1,6 +1,6 @@
 <div class="container-fluid" id="messages-content">
   <% { :message => false, :flash => true }.each do |method, can_close| %>
-    <% { :alert => :danger, :warning => :warning, :notice => :sucess, :info => :info }.each do |type, css| %>
+    <% { :alert => :danger, :warning => :warning, :notice => :success, :info => :info }.each do |type, css| %>
       <% messages = [send(method)[type]].flatten.reject &:blank? -%>
       <% messages.each do |message| -%>
         <% next if message.blank? -%>

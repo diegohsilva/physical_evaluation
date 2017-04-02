@@ -1,0 +1,2 @@
+module ExerciseTrainingsHelper
+end

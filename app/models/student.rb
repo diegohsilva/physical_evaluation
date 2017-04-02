@@ -67,7 +67,7 @@ class Student < ActiveRecord::Base
       user.update_attributes(student_id: id )
     else
       if user = User.find_by_student_id(id)
-        user.update_attributes(email: email, password: 12345678, password_confirmation: 12345678, student_id: id)
+        user.update_attributes(email: email)
       else
         user = User.new(email: email, password: 12345678, password_confirmation: 12345678, student_id: id)
         if user.save

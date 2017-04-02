@@ -15,3 +15,6 @@ pt-BR:
         student_name: 'Aluno'
         week_day: 'Dia da Semana'
         break_time: 'Tempo de descanso entre exercícios'
+        terca: "Terça"
+        sabado: "Sábado"
+        coach_name: "Personal"

@@ -1,6 +1,7 @@
 <div class="row-fluid"> 
  <div class="span12">
    <%= f.input :student_id, as: :hidden %>
+   <%= f.input :company_id, as: :hidden %>
    <%= f.input :student_name, :url => autocomplete_student_name_students_path, :as => :autocomplete , :id_element => '#evaluation_student_id', :placeholder => "Digite o nome do aluno", :multiple => false, input_html: {class:'span7'} %>
  </div>
 </div>   

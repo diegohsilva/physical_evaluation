@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <p>Prezada aluna <%= @evaluation.student%>,</p>
+    <p>
+			Gostaria de avisar que sua avaliação física feita no dia <strong><%= l @evaluation.evaluation_date %></strong> com a profissional <strong><%= @evaluation.evaluator %></strong> está pra vencer.<br><br>
+			Procure à direção.
+    </p>
+    <p>
+			Atenciosamente;<br><br>
+
+			<%= @evaluation.company.name%>.			
+    </p>
+  </body>

@@ -5,6 +5,7 @@ class Evaluation < ActiveRecord::Base
 
   belongs_to :student
   belongs_to :evaluator
+  belongs_to :company
   
   mount_uploader :front_photo,FrontPhotoUploader
   mount_uploader :side_photo, SidePhotoUploader
@@ -12,61 +13,75 @@ class Evaluation < ActiveRecord::Base
   mount_uploader :front_contracted_photo, FrontContractedPhotoUploader
   mount_uploader :back_contracted_photo, BackContractedPhotoUploader
   
-  validates :student_name, :evaluator_name, presence: true
-  validates :student_name, :evaluator_name, presence: true  
-  validates_date :end_date, after: :evaluation_date, :after_message => "Data de vencimento não pode ser menor que data da avaliação"
+  validates :student_name, :evaluator_name,:ccorp_altura, :ccorp_peso, :cintura, :quadril, :ccorp_gordura,  presence: true
+  validates_date :end_date, after: :evaluation_date, :after_message => "Data de vencimento não pode ser menor ou igual que data da avaliação"
+  
+  validate :validar_evaluation_amn_dor
   
   delegate :age, to: :student, prefix: true
   
-  scope :by_expired, lambda { |date| where("evaluations.end_date = ?", date) }
+  scope :by_expired, lambda { |date| where("evaluations.end_date <= ?", date) }
 
+  scope :are_due, lambda { |date| where("evaluations.end_date = ?", date) }
+  
+  scope :sorted, -> { order(:id) }
+	
   def to_s
-     name			
+		
   end
   
   def imc
-    c = ccorp_altura * ccorp_altura 
-      (ccorp_peso / c).round(2)
+    unless ccorp_altura.nil? && ccorp_peso.nil?
+      c = ccorp_altura * ccorp_altura 
+      cc = (ccorp_peso / c).round(2)
+    end
   end
   
   
   def gordura
-    peso_libra = ccorp_peso * 2.20462262
-    item2 = (peso_libra * 1.082) + 94.42
-    circunferencia_cintura = cintura * 0.393700787
-    massa_magra = item2 - (circunferencia_cintura * 4.15)
-    #gorduracorporal = ((peso_libra - massa_magra) * 100) / peso_libra
-    (((peso_libra - massa_magra) * 100) / peso_libra).round(2)
+    unless imc.nil?    
+      peso_libra = ccorp_peso * 2.20462262
+      item2 = (peso_libra * 1.082) + 94.42
+      circunferencia_cintura = cintura * 0.393700787
+      massa_magra = item2 - (circunferencia_cintura * 4.15)
+      #gorduracorporal = ((peso_libra - massa_magra) * 100) / peso_libra
+      (((peso_libra - massa_magra) * 100) / peso_libra).round(2)
+    end
   end
   
   def relacao_cintura_quadril
-     q = cintura / quadril
-     q.round(2)
+    unless cintura.nil? && quadril.nil?
+       q = cintura / quadril
+       q.round(2)
+    end
   end
   
   def tmb
-    d = ccorp_altura * 100
-    age = student_age[:ano]
-    peso = ccorp_peso
-    l = 0.0
-    if student.male?
-       l = (66 + (13.7 * ccorp_peso) + (5.0 * d) - (6.8 * age))
-    else
-       l = (655 + (9.6 * ccorp_peso) + (1.8 * d) - (4.7 * age))
+    unless ccorp_altura.nil?
+      
+      d = ccorp_altura * 100
+      age = student_age[:ano]
+      peso = ccorp_peso
+      l = 0.0
+      if student.male?
+         l = (66 + (13.7 * ccorp_peso) + (5.0 * d) - (6.8 * age))
+      else
+         l = (655 + (9.6 * ccorp_peso) + (1.8 * d) - (4.7 * age))
+      end
+      case amn_frequencia
+        when 0 
+           l = l * 1.2
+        when (1..2)
+           l = l * 1.375
+        when (3..4)     
+           l = l * 1.55
+        when (5..6)
+           l = l * 1.725
+        when (7..10) 
+           l = l * 1.9  
+      end     
+      l.to_i
     end
-    case amn_frequencia
-      when 0 
-         l = l * 1.2
-      when (1..2)
-         l = l * 1.375
-      when (3..4)     
-         l = l * 1.55
-      when (5..6)
-         l = l * 1.725
-      when (7..10) 
-         l = l * 1.9  
-    end     
-    l.to_i
   end
 
   def media_gordura
@@ -524,31 +539,38 @@ class Evaluation < ActiveRecord::Base
     ((massa_magra_percent * 100)/peso_libra).round(2)
   end
   def classification_imc
-      if student.male?
-        if imc > 43
-          "Obsidade mórbida"
-        elsif (30..39.9).include?(imc)
-          "Obsidade moderada"
-        elsif (25..29.9).include?(imc)
-          "Obesidade leve"
-        elsif (20..24.9).include?(imc)
-          "Normal"
-        elsif imc < 20
-          "Abaixo do normal"
-        end     
-      else
-        if imc > 39
-          "Obsidade mórbida"
-        elsif (29..38.9).include?(imc)
-          "Obsidade moderada"
-        elsif (24..28.9).include?(imc)
-          "Obesidade leve"
-        elsif (19..23.9).include?(imc)
-          "Normal"
-        elsif imc < 19
-          "Abaixo do normal"
-        end             
-      end
+      unless imc.nil?
+        if student.male?
+          if imc > 43
+            "Obsidade mórbida"
+          elsif (30..39.9).include?(imc)
+            "Obsidade moderada"
+          elsif (25..29.9).include?(imc)
+            "Obesidade leve"
+          elsif (20..24.9).include?(imc)
+            "Normal"
+          elsif imc < 20
+            "Abaixo do normal"
+          end     
+        else
+          if imc > 39
+            "Obsidade mórbida"
+          elsif (29..38.9).include?(imc)
+            "Obsidade moderada"
+          elsif (24..28.9).include?(imc)
+            "Obesidade leve"
+          elsif (19..23.9).include?(imc)
+            "Normal"
+          elsif imc < 19
+            "Abaixo do normal"
+          end             
+        end
+    end
   end
 
+  def validar_evaluation_amn_dor
+      errors.add(:amn_dor, "não pode ficar em branco") if amn_limitacao? && amn_dor.empty?
+  end
+  
+  
 end

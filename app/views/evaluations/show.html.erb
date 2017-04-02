@@ -1,13 +1,14 @@
-<%= @imc =  @evaluation.imc %>				
-<%= classification =  @evaluation.classification_imc %>			
-<%= @gg = @evaluation.gordura.to_i %>	
-\<%= @g = @evaluation.classification_coporral_fat[:position] %>	
-<%= @gt = @evaluation.classification_coporral_fat[:text] %>	
+<% @imc =  @evaluation.imc %>				
+<% classification =  @evaluation.classification_imc %>			
+<% @gg = @evaluation.gordura.to_i %>	
+<% @g = @evaluation.classification_coporral_fat[:position] %>	
+<% @gt = @evaluation.classification_coporral_fat[:text] %>	
 
-
-
-<h4 class="text-info text-center">Resultado da Avaliação</h4>
-<br	>			
+<%= link_to edit_evaluation_path(@evaluation), role: 'button' do %>
+  <h5 title="Editar"><i class="icon-pencil"></i></h5>
+<% end %>
+<h4 class="text-info text-center">Avaliação Física</h4>
+<hr>
 <table class="table table-bordered">
 	<tr>
 		<td width="50%">
@@ -27,11 +28,434 @@
 			<%= @evaluation.student.age[:mes] %> meses
 			<%= @evaluation.student.age[:dia] %> dias
 		</td>
-		<td colspan="2">
-			<strong>Peso:</strong> <%= @evaluation.ccorp_peso %> quilos
+		<td>
+			<strong>Peso:</strong> <%= @evaluation.ccorp_peso %> kg
+		</td>
+		<td>
+			<strong>Quadril:</strong> <%= @evaluation.quadril %> cm
+		</td>		
+	</tr>
+	<tr>
+		<td>
+			<strong>Cintura:</strong> <%= @evaluation.cintura %> cm			
+		</td>
+		<td colspan='2'>
+			<strong>Meta:</strong> <%= @evaluation.ccorp_gordura %>
 		</td>
 	</tr>
+	
 </table>
+
+<h4 class="text-info text-center">Questionario PAR Q </h4>
+<table class="table table-bordered">
+	<% if @evaluation.amn_problemacardiado %>
+		<tr>
+			<td>
+				Seu médico já disse que você possui um problema cardíaco e recomendou atividades físicas apenas sob supervisão médica?
+			</td>
+			<td>
+				<i class="icon-ok"></i>
+			</td>
+		</tr>					
+	<% end %>
+	<% if @evaluation.amn_dorpeito %>
+		<tr>
+			<td>
+				Você tem dor no peito provocada por atividades físicas?					
+			</td>
+			<td>
+				<i class="icon-ok"></i>
+			</td>
+		</tr>
+	<% end %>
+	<% if @evaluation.amn_dorpeitoultimomes %>
+		<tr>
+			<td>
+				Você sentiu dor no peito no ultimo mês?
+			</td>
+			<td>
+				<i class="icon-ok"></i>
+			</td>
+		</tr>
+	<% end %>
+	<% if @evaluation.amn_desmaio %>
+		<tr>
+			<td>
+				Você já perdeu a consciência em alguma ocasião? Ou sofreu alguma queda em vrtude de tontura?					
+			</td>
+			<td>
+				<i class="icon-ok"></i>
+			</td>
+		</tr>					
+	<% end %>								
+	<% if @evaluation.amn_medicamentopressao %>
+		<tr>
+			<td>
+				Algum médico já lhe prescreveu medicamento para pressão arterial ou para coração?
+			</td>
+			<td>
+				<i class="icon-ok"></i>
+			</td>
+		</tr>
+	<% end %>								
+	<% if @evaluation.amn_impedimento %>
+		<tr>
+			<td>
+				Você tem conhecimento  por informação médica ou pela própria experiência de algum motivo que poderia impedi-lo de participar de atividades físicas sem supervisão médica?					
+			</td>
+			<td>
+				<i class="icon-ok"></i>
+			</td>
+		</tr>
+	<% end %>
+	<% if @evaluation.amn_problemaosseo %>
+		<tr>
+			<td>
+				Você tem algum problema ósseo ou articularque poderia agravar-se com a prática de atividades físicas?
+			</td>
+			<td>
+				<i class="icon-ok"></i>
+			</td>
+		</tr>				
+<% end %>																
+</table>
+
+<div class="row-fluid"> 
+   <div class="span12"> 
+		<table class="table table-bordered">
+			<tr>
+				<th>
+					<p class="text-center">Observação</p>
+				</th>
+			</tr>
+			<tr>
+				<td>
+					<%= @evaluation.amn_observacoes %>					
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>
+
+	
+<h4 class="text-info text-center">Avaliação Postural</h4>
+
+
+<div class="row-fluid"> 
+   <div class="span4"> 
+		<table class="table table-bordered">
+			<tr>
+				<th>
+					<p class="text-center">Visão Lateral</p>
+				</th>
+			</tr>
+			<% if @evaluation.anterversao_de_quadril %>
+				<tr>
+					<td>
+						Anterversão de Quadril
+					</td>
+					<td>
+						<i class="icon-ok"></i>
+					</td>
+				</tr>					
+			<% end %>
+			<% if @evaluation.hiperlordose_cervical %>
+				<tr>
+					<td>
+						Hiperlordose Cervical
+					</td>
+					<td>
+						<i class="icon-ok"></i>
+					</td>
+				</tr>					
+			<% end %>
+			<% if @evaluation.retroversao_de_quadril %>
+				<tr>
+					<td>
+						Retroversão de Quadril
+					</td>
+					<td>
+						<i class="icon-ok"></i>
+					</td>
+				</tr>					
+			<% end %>
+			<% if @evaluation.hiperlordose_lombar %>
+				<tr>
+					<td>
+						Hiperlordose Lombar
+					</td>
+					<td>
+						<i class="icon-ok"></i>
+					</td>
+				</tr>					
+			<% end %>
+			<% if @evaluation.rotacao_interna_ombros %>
+				<tr>
+					<td>
+						Rotação Interna Ombros
+					</td>
+					<td>
+						<i class="icon-ok"></i>
+					</td>
+				</tr>					
+			<% end %>
+			<% if @evaluation.hipercifose_toracica %>
+				<tr>
+					<td>
+						Hipercifose Torácica
+					</td>
+					<td>
+						<i class="icon-ok"></i>
+					</td>
+				</tr>					
+			<% end %>
+			<% if @evaluation.retificacao_cervical %>
+				<tr>
+					<td>
+						Retificação Cervical
+					</td>
+					<td>
+						<i class="icon-ok"></i>
+					</td>
+				</tr>					
+			<% end %>
+			<% if @evaluation.pe_plano %>
+				<tr>
+					<td>
+						Pé Plano
+					</td>
+					<td>
+						<i class="icon-ok"></i>
+					</td>
+				</tr>					
+			<% end %>
+			<% if @evaluation.retificacao_lombar %>
+				<tr>
+					<td>
+						Retificação Lombar
+					</td>
+					<td>
+						<i class="icon-ok"></i>
+					</td>
+				</tr>					
+			<% end %>
+			<% if @evaluation.pe_cavo %>
+				<tr>
+					<td>
+						Pé Cavo
+					</td>
+					<td>
+						<i class="icon-ok"></i>
+					</td>
+				</tr>					
+			<% end %>
+			<% if @evaluation.protusao_abdominal %>
+				<tr>
+					<td>
+						Protusão Abdominal
+					</td>
+					<td>
+						<i class="icon-ok"></i>
+					</td>
+				</tr>
+			<% end %>
+			<% if @evaluation.pe_calcaneo %>
+				<tr>
+					<td>
+						Pé Calcâneo
+					</td>
+					<td>
+						<i class="icon-ok"></i>
+					</td>
+				</tr>				
+			<% end %>
+			<% if @evaluation.pe_equino %>
+				<tr>
+					<td>
+						Pé Equino
+					</td>
+					<td>
+						<i class="icon-ok"></i>
+					</td>
+				</tr>				
+			<% end %>
+			<% if @evaluation.genu_flexo %>
+				<tr>
+					<td>
+						Genu Flexo
+					</td>
+					<td>
+						<i class="icon-ok"></i>
+					</td>
+				</tr>				
+			<% end %>
+			<% if @evaluation.genu_recurvado %>
+				<tr>
+					<td>
+						Genu Recurvado
+					</td>
+					<td>
+						<i class="icon-ok"></i>
+					</td>
+				</tr>				
+			<% end %>
+		</table>				
+	 </div>
+	 <div class="span4">
+		<table class="table table-bordered">
+			<tr>
+				<th>
+					<p class="text-center">Visão Posterior</p>
+				</th>
+			</tr>
+			<% if @evaluation.escoliose_cervical %>
+				<tr>
+					<td>
+						Escoliose Cervival
+					</td>
+					<td>
+						<i class="icon-ok"></i>
+					</td>
+				</tr>				
+			<% end %>
+			<% if @evaluation.escoliose_cervical %>
+				<tr>
+					<td>
+						Escoliose Cervival
+					</td>
+					<td>
+						<i class="icon-ok"></i>
+					</td>
+				</tr>				
+			<% end %>
+			<% if @evaluation.escoliose_lombar %>
+				<tr>
+					<td>
+						Escoliose Lombar
+					</td>
+					<td>
+						<i class="icon-ok"></i>
+					</td>
+				</tr>				
+			<% end %>
+			<% if @evaluation.retracao_escapular %>
+				<tr>
+					<td>
+						Retração Escapular
+					</td>
+					<td>
+						<i class="icon-ok"></i>
+					</td>
+				</tr>		
+			<% end %>
+			<% if @evaluation.pe_vago %>
+				<tr>
+					<td>
+						Pé Vago
+					</td>
+					<td>
+						<i class="icon-ok"></i>
+					</td>
+				</tr>		
+			<% end %>
+			<% if @evaluation.escoliose_toracica %>
+				<tr>
+					<td>
+						Escoliose Torácica
+					</td>
+					<td>
+						<i class="icon-ok"></i>
+					</td>
+				</tr>		
+			<% end %>
+			<% if @evaluation.protacao_escapular %>
+				<tr>
+					<td>
+						Protação Escapular
+					</td>
+					<td>
+						<i class="icon-ok"></i>
+					</td>
+				</tr>		
+			<% end %>
+			<% if @evaluation.depressao_escapular %>
+				<tr>
+					<td>
+						Depressão Escapular
+					</td>
+					<td>
+						<i class="icon-ok"></i>
+					</td>
+				</tr>		
+			<% end %>
+			<% if @evaluation.pe_varo %>
+				<tr>
+					<td>
+						Pé Varo
+					</td>
+					<td>
+						<i class="icon-ok"></i>
+					</td>
+				</tr>		
+			<% end %>
+		</table>		
+	 </div>  
+	 <div class="span4">
+		<table class="table table-bordered">
+			<tr>
+				<th>
+					<p class="text-center">Visão Traseira</p>
+				</th>
+			</tr>
+			<% if @evaluation.genu_valgo %>
+				<tr>
+					<td>
+						Genu Valgo
+					</td>
+					<td>
+						<i class="icon-ok"></i>
+					</td>
+				</tr>		
+			<% end %>
+			<% if @evaluation.genu_varo %>
+				<tr>
+					<td>
+						Genu Varo
+					</td>
+					<td>
+						<i class="icon-ok"></i>
+					</td>
+				</tr>		
+			<% end %>
+			<% if @evaluation.pe_aduto %>
+				<tr>
+					<td>
+						Pé Aduto
+					</td>
+					<td>
+						<i class="icon-ok"></i>
+					</td>
+				</tr>		
+			<% end %>
+			<% if @evaluation.pe_abduto %>
+				<tr>
+					<td>
+						Pé Abduto
+					</td>
+					<td>
+						<i class="icon-ok"></i>
+					</td>
+				</tr>		
+			<% end %>
+			
+						
+		</table>		
+	 </div>  
+	
+</div>
+
+<h4 class="text-info text-center">Resultado da Avaliação</h4>
+<br	>			
 <h4 class="text-info">Composição corporal</h4>
 <table class="table table-bordered">
 	<tr>
@@ -94,8 +518,7 @@
 		<td>
 		</td>
 		<td>
-		</td>
-			
+		</td>			
 	</tr>
 	<tr>
 		<td>
@@ -144,7 +567,7 @@
 	</tr>
 	<tr>
 		<td>
-			<div class="alert alert-info">
+			<div class="alert alert-info" title='Índice de Massa Corporea'>
 				IMC				
 			</div>
 		</td>
@@ -168,7 +591,7 @@
 	</tr>
 	<tr>
 		<td>
-			<div class="alert alert-info">
+			<div class="alert alert-info" title="Percentual de Gordura Corporal">
 				PGC				
 			</div>
 		</td>
@@ -187,7 +610,7 @@
 	</tr>
 	<tr>
 		<td>
-			<div class="alert alert-info">
+			<div class="alert alert-info" title="Relação Cintura Quadril">
 				RCQ				
 			</div>
 		</td>
@@ -206,7 +629,7 @@
 	</tr>
 	<tr>
 		<td>
-			<div class="alert alert-info">
+			<div class="alert alert-info" title="Taxa Metabólica Basal">
 				TMB				
 			</div>
 		</td>

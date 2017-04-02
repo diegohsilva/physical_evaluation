@@ -45,58 +45,6 @@ $(function(){
   });
 });
 
-jQuery(function($){
-  $("#event_type_event").on("change", function(e) {
-    var selectedValue = $(this).val(),
-        monitoringContainer = $('#div_monitoring');
-    if (selectedValue == "1" || selectedValue == "2" || selectedValue == "3" || selectedValue == "4" || selectedValue == "5" || selectedValue == "6" || selectedValue == "7" || selectedValue == "8" || selectedValue == "9") {
-      monitoringContainer.addClass("hidden");
-      $("#event_teacher_id").val("");
-      $("#event_student_id").val("");
-
-      if (selectedValue == "1" ){
-        $("#event_description").val("FESTA");
-      }
-
-      if (selectedValue == "2" ){
-        $("#event_description").val("RECESSO");
-      }
-
-      if (selectedValue == "3" ){
-        $("#event_description").val("FERIADO");
-      }
-
-      if (selectedValue == "4" ){
-        $("#event_description").val("DIA DE PROVA");
-      }
-
-      if (selectedValue == "5" ){
-        $("#event_description").val("IMPORTANTE");
-      }
-
-      if (selectedValue == "6" ){
-        $("#event_description").val("PROVA MIDTERM");
-      }
-
-      if (selectedValue == "7" ){
-        $("#event_description").val("PROVA FINAL");
-      }
-
-      if (selectedValue == "8" ){
-        $("#event_description").val("PROVA ORAL");
-      }
-      if (selectedValue == "9" ){
-        $("#event_description").val("SPEECH");
-      }
-
-
-
-    } else {
-      monitoringContainer.removeClass("hidden");
-      $("#event_description").val("MONITORIA");
-    }
-  });
-});
 
 
 var maskSetup = function (html) {
@@ -108,6 +56,8 @@ var maskSetup = function (html) {
     html.find('input.average').inputmask("99.99");
     html.find('input.time').inputmask("99:99");
    	html.find('input.float').inputmask("999.99");
+   	html.find('input.float_altura').inputmask("9.99");
+  	html.find('input.float_peso').inputmask("999.99");
  
    	html.find("input.integer").singlemask(/\d/);
     html.find("input.decimal").priceFormat({
@@ -148,5 +98,38 @@ $(function () {
       .on("keyup",     selector, afterChange)
       .on("mouseup",   selector, afterChange);
 
+});
+
+jQuery(function($){
+	$( "#evaluation_amn_limitacao" ).click(function() {
+		selectedValue = $( "#evaluation_amn_limitacao").prop( "checked" );
+		monitoringContainer = $('.div_dor_limitacao');
+		if (selectedValue){
+			monitoringContainer.removeClass( "hidden" )
+		}else{
+			$( "#evaluation_amn_dor" ).val("");			
+			monitoringContainer.addClass( "hidden" )
+		}		
+	});
+	
+});
+
+jQuery(function($){
+	$( "#evaluation_cirugia" ).click(function() {
+		selectedValue = $( "#evaluation_cirugia").prop( "checked" );
+		monitoringContainer1 = $('.div_data_cirugia');
+		monitoringContainer2 = $('.div_info_cirugia');
+		
+		if (selectedValue){
+			monitoringContainer1.removeClass( "hidden" );
+			monitoringContainer2.removeClass( "hidden" );			
+		}else{
+			$( "#evaluation_info_cirugia" ).val("");			
+			$( "#evaluation_data_cirugia" ).val("");						
+			monitoringContainer1.addClass( "hidden" );
+			monitoringContainer2.addClass( "hidden" );
+		}		
+	});
+	
 });
 
