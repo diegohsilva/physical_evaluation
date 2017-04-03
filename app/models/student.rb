@@ -17,11 +17,7 @@ class Student < ActiveRecord::Base
 	scope :by_name, lambda { |name| where("name = ?", name) }
 	
 	scope :sorted, -> { order(:name) }
-
-	def self.search(term)
-    where('LOWER(name) LIKE :term OR LOWER(name) LIKE :term', term: "%#{term.downcase}%")
-  end
-	
+		
 	def to_s
 		name
 	end
