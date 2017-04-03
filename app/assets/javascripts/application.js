@@ -13,10 +13,14 @@
 //= require cocoon
 //= require jquery-ui
 //= require autocomplete-rails
-//= require jquery-ui/autocomplete
 //= require bootstrap-datepicker
 //= require bootstrap-datepicker.min
 //= require bootstrap-datepicker.pt-BR.min
+//= require jquery_ujs
+//= require jquery-ui/autocomplete
+//= require jquery-ui
+
+
 $(function(){
     $(".input-search").keyup(function(){
         //pega o css da tabela

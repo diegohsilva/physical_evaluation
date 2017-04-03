@@ -6,6 +6,7 @@
  *= require_self
  *= require autocomplete
  *= require bootstrap-datepicker3
+ *= require jquery-ui/datepicker
  */
 
 #div_color{
