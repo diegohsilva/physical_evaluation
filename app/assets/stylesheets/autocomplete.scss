@@ -27,7 +27,9 @@
   background-clip: padding-box;
   *border-right-width: 2px;
   *border-bottom-width: 2px;
-
+	
+	.ui-helper-hidden-accessible { display:none; }
+	
   .ui-menu-item > a.ui-corner-all {
     display: block;
     padding: 3px 15px;
