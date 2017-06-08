@@ -1,0 +1,12 @@
+pt-BR:
+  title:
+  activerecord:
+    models:
+      product:
+        one: "Produto"
+        many: "Produtos"
+    attributes:
+      product:
+        name: "Nome"
+        value_default: 'Preço padrão'
+        description: 'Descrição'

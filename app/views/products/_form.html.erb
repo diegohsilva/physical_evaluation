@@ -1,0 +1,16 @@
+<%= simple_form_for(@product) do |f| %>
+	<div class="row-fluid">
+		<div class="span9"><%= f.input :name, input_html: { class: 'span9' } %></div>
+	</div>
+	<div class="row-fluid">
+		<div class="span4"><%= f.input :value_default, as: :string, input_html: { class: 'span4 float' } %></div>
+	</div>	
+	<div class="row-fluid">
+		<div class="span10"><%= f.input :description,  input_html:{ rows:10, cols:50 , class:'span10'} %></div>
+	</div>
+	
+	<div class="form-actions">
+		<%= f.button :submit, class: 'btn btn-success' %>
+		<%= link_to 'Voltar', products_path, class: 'btn' %>
+	</div>
+<% end %>

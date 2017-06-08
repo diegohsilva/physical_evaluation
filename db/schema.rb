@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170402004149) do
+ActiveRecord::Schema.define(version: 20170608143336) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,8 +32,16 @@ ActiveRecord::Schema.define(version: 20170402004149) do
     t.string   "address"
     t.string   "email"
     t.string   "phone"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
+    t.integer  "quant_dias_aviso_avaliacao"
+    t.string   "street",                     limit: 50
+    t.string   "house_number",               limit: 8
+    t.string   "complement",                 limit: 20
+    t.string   "zip_code",                   limit: 10
+    t.string   "neighborhood",               limit: 50
+    t.string   "city",                       limit: 50
+    t.integer  "federal_unit"
   end
 
   create_table "evaluations", force: :cascade do |t|
@@ -152,6 +160,8 @@ ActiveRecord::Schema.define(version: 20170402004149) do
     t.boolean  "cirugia"
     t.boolean  "jackson_e_pollock_5_dobras"
     t.integer  "company_id"
+    t.integer  "protocol"
+    t.integer  "evaluation_previous_id"
   end
 
   add_index "evaluations", ["company_id"], name: "index_evaluations_on_company_id", using: :btree
@@ -167,6 +177,16 @@ ActiveRecord::Schema.define(version: 20170402004149) do
     t.datetime "updated_at",            null: false
     t.string   "crefito"
   end
+
+  create_table "exercise_dones", force: :cascade do |t|
+    t.integer  "exercise_training_id"
+    t.date     "date"
+    t.boolean  "done"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  add_index "exercise_dones", ["exercise_training_id"], name: "index_exercise_dones_on_exercise_training_id", using: :btree
 
   create_table "exercise_trainings", force: :cascade do |t|
     t.integer  "exercise_id"
@@ -190,6 +210,14 @@ ActiveRecord::Schema.define(version: 20170402004149) do
     t.string   "chave_video"
     t.string   "grupo_muscular"
     t.string   "musculo"
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string   "name"
+    t.float    "value_default"
+    t.text     "description"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "students", force: :cascade do |t|
@@ -247,17 +275,21 @@ ActiveRecord::Schema.define(version: 20170402004149) do
     t.datetime "updated_at",                          null: false
     t.integer  "student_id"
     t.integer  "evaluator_id"
+    t.integer  "coach_id"
   end
 
+  add_index "users", ["coach_id"], name: "index_users_on_coach_id", using: :btree
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "evaluations", "companies"
   add_foreign_key "evaluations", "evaluators"
   add_foreign_key "evaluations", "students"
+  add_foreign_key "exercise_dones", "exercise_trainings"
   add_foreign_key "exercise_trainings", "exercises"
   add_foreign_key "exercise_trainings", "trainings"
   add_foreign_key "trainings", "coaches"
   add_foreign_key "trainings", "students"
+  add_foreign_key "users", "coaches"
   add_foreign_key "users", "students", name: "users_student_id_fk"
 end

@@ -1,0 +1,39 @@
+<table class="table">
+  <td><h3>Listagem de Produtos</h3></td>
+  <td width='5%'>
+    <%= link_to new_product_path, role: 'button' do %>
+      <h2 class="text-success" title='Novo Avaliador'><i class="icon-plus"></i></h2>
+    <% end %>    
+  </td>
+</table>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Valor padrão</th>
+      <th>Descrição</th>
+      <th colspan="2" width="5%"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @products.sorted.each do |product| %>
+      <tr>
+        <td><%= product.name %></td>
+        <td><%= product.value_default %></td>
+        <td><%= product.description %></td>
+				<td>
+          <%= link_to edit_product_path(product), role: 'button' do %>
+            <h5 title="Editar"><i class="icon-pencil"></i></h5>
+          <% end %>
+        </td>
+        <td>
+          <%= link_to product, method: :delete, data:{confirm: 'Confirma exclusão ?'}, role: 'button' do %>
+            <h5 title="Apagar"><i class="icon-trash"></i></h5>
+          <% end %>              
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

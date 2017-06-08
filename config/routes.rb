@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :products
   resources :companies
   resources :coaches do 
     get :autocomplete_coach_name, :on => :collection  	
